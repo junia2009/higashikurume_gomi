@@ -1,0 +1,19 @@
+{
+  "name": "東久留米ごみナビ",
+  "short_name": "ごみナビ",
+  "description": "東久留米市の家庭ごみ 分別検索と収集日カレンダー",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f8f6",
+  "theme_color": "#2e7d5b",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
