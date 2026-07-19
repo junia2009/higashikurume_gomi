@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>東久留米ごみナビ</title>
+  <meta name="description" content="東久留米市の家庭ごみ 分別検索と収集日カレンダー。今日・明日出せるごみが一目でわかる。">
+  <meta name="theme-color" content="#2e7d5b">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="app">
+    <div class="title">東久留米ごみナビ<small>分別検索＋収集日カレンダー</small></div>
+    <button id="areaSwitch" class="area-switch">地区未設定</button>
+  </header>
+
+  <div class="wrap">
+    <nav class="tabs" role="tablist">
+      <button data-tab="today" aria-selected="true">今日のごみ</button>
+      <button data-tab="search" aria-selected="false">品目検索</button>
+      <button data-tab="calendar" aria-selected="false">カレンダー</button>
+      <button data-tab="info" aria-selected="false">ルール</button>
+    </nav>
+
+    <section class="view active" data-view="today">
+      <div id="viewToday"></div>
+    </section>
+
+    <section class="view" data-view="search">
+      <div class="search-box">
+        <input id="searchInput" type="search" inputmode="search" autocomplete="off"
+               placeholder="品目名で検索（例: ペットボトル、電池、傘）">
+      </div>
+      <div id="searchResults"></div>
+    </section>
+
+    <section class="view" data-view="calendar">
+      <div id="viewCalendar"></div>
+    </section>
+
+    <section class="view" data-view="info">
+      <div class="card">
+        <h2>ごみ出しの基本ルール</h2>
+        <ul class="rules">
+          <li>朝 <b>8:30まで</b> に戸別収集（自宅前）に出す</li>
+          <li>有料指定袋制（燃やせる／燃やせない／プラで袋が異なる）</li>
+          <li>1世帯につき各曜日 <b>5袋まで</b>（紙類・布類は制限なし）</li>
+          <li>紙類は雨天も回収／布類は雨の日は出さない</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>祝日・年末年始</h2>
+        <p class="rules">祝日の収集有無は「広報ひがしくるめ」で告知されます。本アプリは裏取りが取れるまで、祝日に「要確認」のバッジを表示します。年末年始（暫定 12/31〜1/3）は収集なしとして扱っています。</p>
+        <p class="rules">確認先: ごみ対策課 <a href="tel:0424732117">042-473-2117</a></p>
+      </div>
+      <div class="card">
+        <h2>データについて</h2>
+        <p class="rules">品目データ: <span id="itemsVersion">-</span></p>
+        <p class="rules">収集日程: 東久留米市公式サイト（2022年2月更新ページ）を基に作成。分別区分は東京都オープンデータカタログ「【東久留米市】ごみの分別方法一覧」を利用予定。</p>
+        <p class="rules">正確な分別は必ず市公式（<a href="https://www.gomisaku.jp/0069/" target="_blank" rel="noopener">ごみサク</a>）でご確認ください。</p>
+      </div>
+      <p class="src-note">個人開発の非公式アプリです。収集日・分別区分は市公式情報をご確認ください。</p>
+    </section>
+  </div>
+
+  <script src="assets/logic.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
