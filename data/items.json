@@ -1,110 +1,6655 @@
 {
-  "version": "seed-2026-07",
-  "seed": true,
-  "source": "暫定シードデータ（一般的な分別例）。東京都オープンデータカタログの公式CSVを tools/csv2json.js で変換して置き換える。",
-  "items": [
-    { "name": "生ごみ", "yomi": "なまごみ", "category": "burnable", "note": "水をよく切って出す" },
-    { "name": "貝殻", "yomi": "かいがら", "category": "burnable", "note": "" },
-    { "name": "ティッシュペーパー", "yomi": "てぃっしゅぺーぱー", "category": "burnable", "note": "" },
-    { "name": "紙おむつ", "yomi": "かみおむつ", "category": "burnable", "note": "汚物はトイレに流してから出す" },
-    { "name": "割り箸", "yomi": "わりばし", "category": "burnable", "note": "" },
-    { "name": "竹串", "yomi": "たけぐし", "category": "burnable", "note": "折って紙に包む" },
-    { "name": "木の枝", "yomi": "きのえだ", "category": "burnable", "note": "短く切って束ねる ※長さの上限は市の案内で要確認" },
-    { "name": "落ち葉", "yomi": "おちば", "category": "burnable", "note": "" },
-    { "name": "革靴", "yomi": "かわぐつ", "category": "burnable", "note": "" },
-    { "name": "革製品", "yomi": "かわせいひん", "category": "burnable", "note": "かばん・ベルトなど" },
-    { "name": "ぬいぐるみ", "yomi": "ぬいぐるみ", "category": "burnable", "note": "大型のものは粗大ごみ" },
-    { "name": "タバコの吸い殻", "yomi": "たばこのすいがら", "category": "burnable", "note": "水で湿らせて出す" },
-    { "name": "保冷剤", "yomi": "ほれいざい", "category": "burnable", "note": "" },
-    { "name": "乾燥剤", "yomi": "かんそうざい", "category": "burnable", "note": "" },
-    { "name": "ペット用トイレ砂", "yomi": "ぺっとようといれすな", "category": "burnable", "note": "紙製・木製のもの。鉱物系は市の案内で要確認" },
-    { "name": "輪ゴム", "yomi": "わごむ", "category": "burnable", "note": "" },
-    { "name": "ゴム手袋", "yomi": "ごむてぶくろ", "category": "burnable", "note": "" },
-    { "name": "スポンジ", "yomi": "すぽんじ", "category": "burnable", "note": "" },
-    { "name": "写真", "yomi": "しゃしん", "category": "burnable", "note": "" },
-    { "name": "アルバム", "yomi": "あるばむ", "category": "burnable", "note": "" },
-    { "name": "ラップ（食品用・使用済み）", "yomi": "らっぷ", "category": "burnable", "note": "汚れが落ちないプラ容器も燃やせるごみへ" },
-    { "name": "CD・DVD", "yomi": "しーでぃーでぃーぶいでぃー", "category": "burnable", "note": "ケースも同様 ※暫定分類・公式CSVで要確認" },
-    { "name": "ビデオテープ", "yomi": "びでおてーぷ", "category": "burnable", "note": "※暫定分類・公式CSVで要確認" },
-    { "name": "レジ袋", "yomi": "れじぶくろ", "category": "plastic", "note": "汚れを落として出す" },
-    { "name": "食品トレイ", "yomi": "しょくひんとれい", "category": "plastic", "note": "軽くすすいで出す" },
-    { "name": "発泡スチロール", "yomi": "はっぽうすちろーる", "category": "plastic", "note": "容器包装のもの。大きいものは割って袋へ" },
-    { "name": "卵パック", "yomi": "たまごぱっく", "category": "plastic", "note": "" },
-    { "name": "カップ麺の容器", "yomi": "かっぷめんのようき", "category": "plastic", "note": "すすいで出す。汚れが落ちなければ燃やせるごみ" },
-    { "name": "お菓子の袋", "yomi": "おかしのふくろ", "category": "plastic", "note": "" },
-    { "name": "洗剤のボトル", "yomi": "せんざいのぼとる", "category": "plastic", "note": "使い切ってすすぐ" },
-    { "name": "シャンプーのボトル", "yomi": "しゃんぷーのぼとる", "category": "plastic", "note": "使い切ってすすぐ" },
-    { "name": "マヨネーズのチューブ", "yomi": "まよねーずのちゅーぶ", "category": "plastic", "note": "使い切って軽くすすぐ。落ちなければ燃やせるごみ" },
-    { "name": "豆腐のパック", "yomi": "とうふのぱっく", "category": "plastic", "note": "すすいで出す" },
-    { "name": "果物のネット", "yomi": "くだもののねっと", "category": "plastic", "note": "" },
-    { "name": "緩衝材（プチプチ）", "yomi": "かんしょうざいぷちぷち", "category": "plastic", "note": "" },
-    { "name": "ペットボトルのキャップ・ラベル", "yomi": "ぺっとぼとるのきゃっぷらべる", "category": "plastic", "note": "本体はPETボトルへ" },
-    { "name": "ペットボトル", "yomi": "ぺっとぼとる", "category": "pet", "note": "キャップ・ラベルは外して容器包装プラへ。すすいでつぶす" },
-    { "name": "空きびん", "yomi": "あきびん", "category": "bin", "note": "飲料・食品用。キャップを外して中をすすぐ" },
-    { "name": "ジャムのびん", "yomi": "じゃむのびん", "category": "bin", "note": "すすいで出す" },
-    { "name": "酒のびん", "yomi": "さけのびん", "category": "bin", "note": "リターナブルびんは販売店回収も利用可" },
-    { "name": "空き缶（飲料）", "yomi": "あきかんいんりょう", "category": "can", "note": "すすいで出す" },
-    { "name": "缶詰の缶", "yomi": "かんづめのかん", "category": "can", "note": "すすいで出す" },
-    { "name": "お菓子の缶", "yomi": "おかしのかん", "category": "can", "note": "" },
-    { "name": "新聞紙", "yomi": "しんぶんし", "category": "paper", "note": "ひもで縛る。紙類は雨天でも回収" },
-    { "name": "雑誌", "yomi": "ざっし", "category": "paper", "note": "ひもで縛る" },
-    { "name": "本", "yomi": "ほん", "category": "paper", "note": "ひもで縛る" },
-    { "name": "段ボール", "yomi": "だんぼーる", "category": "paper", "note": "たたんでひもで縛る" },
-    { "name": "紙パック", "yomi": "かみぱっく", "category": "paper", "note": "すすいで開いて乾かす" },
-    { "name": "雑がみ", "yomi": "ざつがみ", "category": "paper", "note": "菓子箱・封筒・包装紙など。紙袋にまとめてよい" },
-    { "name": "コピー用紙", "yomi": "こぴーようし", "category": "paper", "note": "" },
-    { "name": "紙袋", "yomi": "かみぶくろ", "category": "paper", "note": "持ち手が紙以外なら外す" },
-    { "name": "衣類", "yomi": "いるい", "category": "cloth", "note": "布類は雨の日に出さない" },
-    { "name": "タオル", "yomi": "たおる", "category": "cloth", "note": "雨の日は出さない" },
-    { "name": "シーツ", "yomi": "しーつ", "category": "cloth", "note": "雨の日は出さない" },
-    { "name": "カーテン", "yomi": "かーてん", "category": "cloth", "note": "雨の日は出さない" },
-    { "name": "茶碗・皿（陶磁器）", "yomi": "ちゃわんさらとうじき", "category": "non_burnable", "note": "割れ物は紙に包んで表示する" },
-    { "name": "ガラスコップ", "yomi": "がらすこっぷ", "category": "non_burnable", "note": "割れ物は紙に包んで表示する" },
-    { "name": "割れたびん", "yomi": "われたびん", "category": "non_burnable", "note": "紙に包んで表示する" },
-    { "name": "電球（白熱球・LED）", "yomi": "でんきゅう", "category": "non_burnable", "note": "蛍光灯・蛍光管は有害ごみへ" },
-    { "name": "傘", "yomi": "かさ", "category": "non_burnable", "note": "" },
-    { "name": "鍋", "yomi": "なべ", "category": "non_burnable", "note": "" },
-    { "name": "フライパン", "yomi": "ふらいぱん", "category": "non_burnable", "note": "" },
-    { "name": "やかん", "yomi": "やかん", "category": "non_burnable", "note": "" },
-    { "name": "包丁", "yomi": "ほうちょう", "category": "non_burnable", "note": "刃を紙で包んで表示する" },
-    { "name": "はさみ", "yomi": "はさみ", "category": "non_burnable", "note": "刃を紙で包む" },
-    { "name": "金属製のキャップ", "yomi": "きんぞくせいのきゃっぷ", "category": "non_burnable", "note": "" },
-    { "name": "アルミホイル", "yomi": "あるみほいる", "category": "non_burnable", "note": "※暫定分類・公式CSVで要確認" },
-    { "name": "針金ハンガー", "yomi": "はりがねはんがー", "category": "non_burnable", "note": "" },
-    { "name": "プラスチック製品（バケツ・ハンガーなど）", "yomi": "ぷらすちっくせいひん", "category": "non_burnable", "note": "容器包装マークのないプラ製品 ※暫定分類・公式CSVで要確認" },
-    { "name": "小型家電（ドライヤーなど）", "yomi": "こがたかでん", "category": "non_burnable", "note": "指定袋に入る大きさのもの。入らなければ粗大ごみ" },
-    { "name": "おもちゃ", "yomi": "おもちゃ", "category": "non_burnable", "note": "電池は抜いて有害ごみへ ※暫定分類" },
-    { "name": "植木鉢（陶器）", "yomi": "うえきばちとうき", "category": "non_burnable", "note": "土は市で収集できない" },
-    { "name": "乾電池", "yomi": "かんでんち", "category": "hazardous", "note": "" },
-    { "name": "ボタン電池", "yomi": "ぼたんでんち", "category": "hazardous", "note": "電極にテープを貼る。販売店回収も利用可" },
-    { "name": "充電式電池", "yomi": "じゅうでんしきでんち", "category": "hazardous", "note": "リサイクル協力店の回収推奨 ※市の案内で要確認" },
-    { "name": "蛍光灯・蛍光管", "yomi": "けいこうとうけいこうかん", "category": "hazardous", "note": "割らずに出す" },
-    { "name": "水銀体温計", "yomi": "すいぎんたいおんけい", "category": "hazardous", "note": "" },
-    { "name": "ライター", "yomi": "らいたー", "category": "hazardous", "note": "使い切って出す" },
-    { "name": "スプレー缶", "yomi": "すぷれーかん", "category": "hazardous", "note": "中身を使い切って出す ※暫定分類・公式CSVで要確認" },
-    { "name": "布団", "yomi": "ふとん", "category": "oversized", "note": "事前申込制" },
-    { "name": "家具", "yomi": "かぐ", "category": "oversized", "note": "事前申込制" },
-    { "name": "ベッド", "yomi": "べっど", "category": "oversized", "note": "事前申込制" },
-    { "name": "ソファ", "yomi": "そふぁ", "category": "oversized", "note": "事前申込制" },
-    { "name": "机", "yomi": "つくえ", "category": "oversized", "note": "事前申込制" },
-    { "name": "椅子", "yomi": "いす", "category": "oversized", "note": "事前申込制" },
-    { "name": "タンス", "yomi": "たんす", "category": "oversized", "note": "事前申込制" },
-    { "name": "自転車", "yomi": "じてんしゃ", "category": "oversized", "note": "事前申込制" },
-    { "name": "電子レンジ", "yomi": "でんしれんじ", "category": "oversized", "note": "事前申込制" },
-    { "name": "ストーブ", "yomi": "すとーぶ", "category": "oversized", "note": "灯油・電池は抜く。事前申込制" },
-    { "name": "カーペット", "yomi": "かーぺっと", "category": "oversized", "note": "事前申込制" },
-    { "name": "テレビ", "yomi": "てれび", "category": "not_collected", "note": "家電リサイクル法対象。販売店または指定引取場所へ" },
-    { "name": "冷蔵庫・冷凍庫", "yomi": "れいぞうこれいとうこ", "category": "not_collected", "note": "家電リサイクル法対象" },
-    { "name": "洗濯機・衣類乾燥機", "yomi": "せんたくきいるいかんそうき", "category": "not_collected", "note": "家電リサイクル法対象" },
-    { "name": "エアコン", "yomi": "えあこん", "category": "not_collected", "note": "家電リサイクル法対象" },
-    { "name": "パソコン", "yomi": "ぱそこん", "category": "not_collected", "note": "メーカー回収または小型家電リサイクルへ" },
-    { "name": "タイヤ", "yomi": "たいや", "category": "not_collected", "note": "販売店等へ相談" },
-    { "name": "バイク", "yomi": "ばいく", "category": "not_collected", "note": "二輪車リサイクルへ" },
-    { "name": "バッテリー（自動車用）", "yomi": "ばってりー", "category": "not_collected", "note": "販売店等へ相談" },
-    { "name": "消火器", "yomi": "しょうかき", "category": "not_collected", "note": "リサイクル窓口へ相談" },
-    { "name": "ピアノ", "yomi": "ぴあの", "category": "not_collected", "note": "販売店・専門業者へ相談" },
-    { "name": "土・砂", "yomi": "つちすな", "category": "not_collected", "note": "市で収集できない" },
-    { "name": "塗料・薬品", "yomi": "とりょうやくひん", "category": "not_collected", "note": "販売店・専門業者へ相談" },
-    { "name": "注射針", "yomi": "ちゅうしゃばり", "category": "not_collected", "note": "処方を受けた医療機関・薬局へ" }
-  ]
+ "version": "2026-07-20",
+ "source": "東京都オープンデータカタログ「【東久留米市】ごみの分別方法一覧」",
+ "count": 1108,
+ "items": [
+  {
+   "name": "24時間式風呂器",
+   "yomi": "24じかんしきふろき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ICレコーダー",
+   "yomi": "あいしーれこーだー",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "アイスクリームの容器（紙製）",
+   "yomi": "あいすくりーむのようき",
+   "category": "burnable",
+   "note": "防水加工されていて水に溶けないため、燃やせるごみへ出してください。"
+  },
+  {
+   "name": "アイスクリームの容器（プラスチック製）",
+   "yomi": "あいすくりーむのようき",
+   "category": "plastic",
+   "note": "残り水で軽くすすいで出してください。"
+  },
+  {
+   "name": "アイススケート靴",
+   "yomi": "あいすすけーとぐつ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "アイスピック",
+   "yomi": "あいすぴっく",
+   "category": "non_burnable",
+   "note": "新聞紙やボロ布で包んでキケンなどと表示して指定収集袋へ入れてください。"
+  },
+  {
+   "name": "アイス枕（冷却枕）",
+   "yomi": "あいすまくら",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "アイロン",
+   "yomi": "あいろん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "アイロン台",
+   "yomi": "あいろんだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "赤ちゃん用のかご（クーファン）",
+   "yomi": "あかちゃんようのかご",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "空き缶",
+   "yomi": "あきかん",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "空きびん",
+   "yomi": "あきびん",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "アコーディオン（楽器）",
+   "yomi": "あこーでぃおん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "アコーディオンカーテン",
+   "yomi": "あこーでぃおんかーてん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "足ヒレ",
+   "yomi": "あしひれ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "足拭きマット",
+   "yomi": "あしふきまっと",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "足踏み健康器",
+   "yomi": "あしぶみけんこうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "足踏みミシン",
+   "yomi": "あしぶみみしん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "足用ホットカーペット",
+   "yomi": "あしようほっとかーぺっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "アタッシュケース（30cm以上）",
+   "yomi": "あたっしゅけーす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "アタッシュケース（30cm未満）",
+   "yomi": "あたっしゅけーす",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "アダプター",
+   "yomi": "あだぷたー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "アダプター",
+   "yomi": "あだぷたー",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "圧力釜",
+   "yomi": "あつりょくかま",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "圧力鍋",
+   "yomi": "あつりょくなべ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "油（機械用）",
+   "yomi": "あぶら",
+   "category": "not_collected",
+   "note": ""
+  },
+  {
+   "name": "油（食用）",
+   "yomi": "あぶら",
+   "category": "burnable",
+   "note": "紙や布に染み込ませるか、凝固剤で固めて出してください。"
+  },
+  {
+   "name": "油こし紙",
+   "yomi": "あぶらこしし",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "油の容器（缶製）",
+   "yomi": "あぶらのようき",
+   "category": "bin_can",
+   "note": "きれいに洗うか拭き取ってください。"
+  },
+  {
+   "name": "油の容器（びん製）",
+   "yomi": "あぶらのようき",
+   "category": "bin_can",
+   "note": "きれいに洗うか拭き取ってください。"
+  },
+  {
+   "name": "油の容器（プラスチック製）",
+   "yomi": "あぶらのようき",
+   "category": "plastic",
+   "note": "きれいに洗うか拭き取ってください。汚れが落ちないものは燃やせないごみへ出してください。"
+  },
+  {
+   "name": "雨具",
+   "yomi": "あまぐ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "編み機",
+   "yomi": "あみき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "編み機の台",
+   "yomi": "あみきのだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "網戸",
+   "yomi": "あみど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "あめの包み・紙（紙製）",
+   "yomi": "あめのつつみ・し",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "あめの包み・袋（プラスチック製）",
+   "yomi": "あめのつつみ・ふくろ",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "洗い桶",
+   "yomi": "あらいおけ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "アルカリイオン浄水器（24cm×17cm×35cm）",
+   "yomi": "あるかりいおんじょうすいき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "アルカリ電池",
+   "yomi": "あるかりでんち",
+   "category": "hazardous",
+   "note": ""
+  },
+  {
+   "name": "アルバム",
+   "yomi": "あるばむ",
+   "category": "burnable",
+   "note": "水に溶けにくいものが多いため、燃やせるごみへ出してください。"
+  },
+  {
+   "name": "アルミサッシ",
+   "yomi": "あるみさっし",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "アルミはく（アルミホイル）",
+   "yomi": "あるみはく",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "アルミ箔容器（うどんなど）",
+   "yomi": "あるみはくようき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "あんか（電気）",
+   "yomi": "あんか",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "安全靴",
+   "yomi": "あんぜんくつ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "安全ピン",
+   "yomi": "あんぜんぴん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "アンテナ（テレビの上に置く・室内用）",
+   "yomi": "あんてな",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "アンテナ（テレビ用・室外用）",
+   "yomi": "あんてな",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "アンテナ（BS、CS用＝パラボラアンテナ）",
+   "yomi": "あんてな",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "アンプ（ギターアンプ）",
+   "yomi": "あんぷ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "アンプ＝ステレオアンプ",
+   "yomi": "あんぷ=すてれおあんぷ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "あんま機（ハンディタイプ）",
+   "yomi": "あんまき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "アーチェリー本体（矢付き）",
+   "yomi": "あーちぇりーほんたい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "アーチェリー矢（80cm）10本ごと",
+   "yomi": "あーちぇりーや10ほんごと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "井草のカーペット（1帖以上）",
+   "yomi": "いぐさのかーぺっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "池（庭のはめ込み式）",
+   "yomi": "いけ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "囲碁盤",
+   "yomi": "いごばん",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "石",
+   "yomi": "いし",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "衣装ケース",
+   "yomi": "いしょうけーす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "衣装ハンガーラック",
+   "yomi": "いしょうはんがーらっく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "衣装箱",
+   "yomi": "いしょうばこ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "いす",
+   "yomi": "いす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "板きれ（30cm以上）",
+   "yomi": "いたきれ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "板きれ（30cm未満）",
+   "yomi": "いたきれ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "一斗缶",
+   "yomi": "いちとかん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "一斗たる",
+   "yomi": "いちとたる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "一面鏡姿見",
+   "yomi": "いちめんきょうすがたみ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "一輪車（作業用）",
+   "yomi": "いちりんしゃ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "一輪車（スポーツ用）",
+   "yomi": "いちりんしゃ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "一升瓶",
+   "yomi": "いっしょうびん",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "一升瓶ケース（ビールケース）",
+   "yomi": "いっしょうびんけーす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "糸",
+   "yomi": "いと",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "犬小屋",
+   "yomi": "いぬこや",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "犬用の柵（室内で飼うためのもの）",
+   "yomi": "いぬようのしがらみ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "イヤホン",
+   "yomi": "いやほん",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "医療廃棄物",
+   "yomi": "いりょうはいきぶつ",
+   "category": "not_collected",
+   "note": "医療機関や販売店に相談するか、専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "衣類",
+   "yomi": "いるい",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "衣類乾燥機",
+   "yomi": "いるいかんそうき",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "入れ歯",
+   "yomi": "いれば",
+   "category": "non_burnable",
+   "note": "金属のついた入れ歯は、市役所1階屋内ひろばと、わくわく健康プラザ窓口でも回収します。熱湯か洗浄剤で洗浄して、備え付けのビニール袋にいれてボックスに投入してください。"
+  },
+  {
+   "name": "色鉛筆",
+   "yomi": "いろえんぴつ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "岩",
+   "yomi": "いわ",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "印鑑（プラスチック製、象牙製）",
+   "yomi": "いんかん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "印鑑（木製）",
+   "yomi": "いんかん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "インクカートリッジ",
+   "yomi": "いんくかーとりっじ",
+   "category": "non_burnable",
+   "note": "各販売店などの回収ボックスもご利用ください。"
+  },
+  {
+   "name": "インクリボン（ワープロなど）",
+   "yomi": "いんくりぼん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "印刷機",
+   "yomi": "いんさつき",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "インスタント写真",
+   "yomi": "いんすたんとしゃしん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "インスタント麺のかやく袋、スパイス袋、スープ袋",
+   "yomi": "いんすたんとめんのかやくふくろ、すぱいすぶくろ、すーぷぶくろ",
+   "category": "plastic",
+   "note": "中身を空にして出してください。汚れの落ちないものは燃やせないごみへ出してください。"
+  },
+  {
+   "name": "インスタント麺の袋",
+   "yomi": "いんすたんとめんのふくろ",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "インターホン",
+   "yomi": "いんたーほん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "飲料容器（紙パックで内側がアルミコーティングしたもの）",
+   "yomi": "いんりょうようき",
+   "category": "paper_cloth",
+   "note": "アルミコーティングされているものは、普通の紙パックとは別に束ねてください。"
+  },
+  {
+   "name": "飲料容器（紙パック）",
+   "yomi": "いんりょうようき",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "飲料容器（ペットボトル）",
+   "yomi": "いんりょうようき",
+   "category": "pet",
+   "note": ""
+  },
+  {
+   "name": "イーゼル（絵画用）",
+   "yomi": "いーぜる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ウィンドサーフィンの帆",
+   "yomi": "うぃんどさーふぃんのほ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ウィンドーファン（外気を取り入れるのみ）",
+   "yomi": "うぃんどーふぁん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ウイスキーのびん",
+   "yomi": "ういすきーのびん",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "ウイッグ",
+   "yomi": "ういっぐ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ウェイクボード",
+   "yomi": "うぇいくぼーど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ウェットスーツ（ダイビングをするときに着るもの）",
+   "yomi": "うぇっとすーつ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ウェットティッシュ",
+   "yomi": "うぇっとてぃっしゅ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "植木棚",
+   "yomi": "うえきだな",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "植木鉢（直径50cm以上）",
+   "yomi": "うえきばち",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "植木鉢（直径50cm未満）",
+   "yomi": "うえきばち",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "植木用ポール（長さ150cm程度、10本1組）",
+   "yomi": "うえきようぽーる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ウォシュレット",
+   "yomi": "うぉしゅれっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "浮き輪",
+   "yomi": "うきわ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ウクレレ（30cm以上）",
+   "yomi": "うくれれ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "うす",
+   "yomi": "うす",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "うちわ（骨組みがプラスチック製）",
+   "yomi": "うちわ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "うちわ（骨組みが木製）",
+   "yomi": "うちわ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "ウッドデッキ",
+   "yomi": "うっどでっき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "腕時計",
+   "yomi": "うでどけい",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "乳母車",
+   "yomi": "うばぐるま",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "梅酒用のびん",
+   "yomi": "うめしゅようのびん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "羽毛ふとん",
+   "yomi": "うもうふとん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "運動靴",
+   "yomi": "うんどうくつ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "エアコン",
+   "yomi": "えあこん",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "エアコン室外機",
+   "yomi": "えあこんしつがいき",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "エアロバイク（健康器具）",
+   "yomi": "えあろばいく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "エア・ウォーカー（健康器具）",
+   "yomi": "えあ・うぉーかー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "エアーベッド",
+   "yomi": "えあーべっど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "映写機",
+   "yomi": "えいしゃき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "栄養ドリンクのびん",
+   "yomi": "えいようどりんくのびん",
+   "category": "bin_can",
+   "note": "キャップ・ふたは、金属製なら缶、プラスチック製なら容器包装プラスチック、それ以外は燃やせないごみへ出してください。"
+  },
+  {
+   "name": "液晶テレビ",
+   "yomi": "えきしょうてれび",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "液体（ペンキ・石油等）",
+   "yomi": "えきたい",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "枝",
+   "yomi": "えだ",
+   "category": "pruned_branch",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "枝切りばさみ（高枝切り用）",
+   "yomi": "えだきりばさみ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "枝切りばさみ（小型）",
+   "yomi": "えだぎりばさみ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "絵の具",
+   "yomi": "えのぐ",
+   "category": "non_burnable",
+   "note": "中身を空にしてから出してください。"
+  },
+  {
+   "name": "絵はがき（写真印刷や圧着されていないもの）",
+   "yomi": "えはがき",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "エプロン",
+   "yomi": "えぷろん",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "絵本",
+   "yomi": "えほん",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "MDプレーヤー（携帯型）",
+   "yomi": "えむでぃーぷれーやー",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "LED電球",
+   "yomi": "えるいーでぃーでんきゅう",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "エレキギター",
+   "yomi": "えれきぎたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "エレクトーン",
+   "yomi": "えれくとーん",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "エレクトーンのいす",
+   "yomi": "えれくとーんのいす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "園芸用アーチ",
+   "yomi": "えんげいようあーち",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "園芸用肥料（家庭用）",
+   "yomi": "えんげいようひりょう",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "園芸用腐葉土（家庭用）",
+   "yomi": "えんげいようふようど",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "エンジンオイル",
+   "yomi": "えんじんおいる",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "延長コード（家庭用）",
+   "yomi": "えんちょうこーど",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "延長コード（家庭用）",
+   "yomi": "えんちょうこーど",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "煙突（風呂用、金属製）",
+   "yomi": "えんとつ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "鉛筆",
+   "yomi": "えんぴつ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "鉛筆削り器",
+   "yomi": "えんぴつけずりき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "オイル（食用）",
+   "yomi": "おいる",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "オイル（自動車用）",
+   "yomi": "おいる",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "オイルタンク（90L鉄製）（灯油タンク）",
+   "yomi": "おいるたんく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "オイルの容器（びん製）",
+   "yomi": "おいるのようき",
+   "category": "bin_can",
+   "note": "きれいに洗うか拭き取ってください。"
+  },
+  {
+   "name": "オイルの容器（プラスチック製）",
+   "yomi": "おいるのようき",
+   "category": "plastic",
+   "note": "きれいに洗うか拭き取ってください。汚れが落ちないものは燃やせないごみへ出してください。"
+  },
+  {
+   "name": "オイルヒーター",
+   "yomi": "おいるひーたー",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "応接用いす",
+   "yomi": "おうせつよういす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "大型ゲーム機（商用ゲーム機）",
+   "yomi": "おおがたげーむき",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "お菓子の紙箱",
+   "yomi": "おかしのかみばこ",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "お菓子の缶",
+   "yomi": "おかしのかん",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "置時計（50cm以上）",
+   "yomi": "おきどけい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "桶（50cm以上）",
+   "yomi": "おけ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "押入れ収納庫",
+   "yomi": "おしいれしゅうのうこ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "押入れタンス",
+   "yomi": "おしいれたんす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "押入れ棚",
+   "yomi": "おしいれだな",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "押入れ用すのこ（木製以外）",
+   "yomi": "おしいれようすのこ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "押入れ用すのこ（木製）",
+   "yomi": "おしいれようすのこ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "押入れ用本棚",
+   "yomi": "おしいれようほんだな",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "押しピン（がびょう）",
+   "yomi": "おしぴん",
+   "category": "non_burnable",
+   "note": "新聞紙やボロ布で包んでキケンなどと表示して指定収集袋へ入れてください。"
+  },
+  {
+   "name": "おしゃぶり",
+   "yomi": "おしゃぶり",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "お玉（杓子）（金属製、プラスチック製）",
+   "yomi": "おたま",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "お玉（杓子）（竹製、木製）",
+   "yomi": "おたま",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "落ち葉（※無料）",
+   "yomi": "おちば",
+   "category": "burnable",
+   "note": "無料のため、透明または半透明の袋で出してください。"
+  },
+  {
+   "name": "お茶がら",
+   "yomi": "おちゃがら",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "お茶碗",
+   "yomi": "おちゃわん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "オットマン（足をおくもの）",
+   "yomi": "おっとまん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "おにぎりの外装フィルム",
+   "yomi": "おにぎりのがいそうふぃるむ",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "帯（おび）",
+   "yomi": "おび",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "おぼん（木製以外）",
+   "yomi": "おぼん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "おぼん（木製）",
+   "yomi": "おぼん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "おまる（子供用）",
+   "yomi": "おまる",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "おむつ（汚物を取り除く）（※無料）",
+   "yomi": "おむつ",
+   "category": "burnable",
+   "note": "汚物を取り除いて、無料のため、透明または半透明の袋で出してください。"
+  },
+  {
+   "name": "おむつ入れ",
+   "yomi": "おむついれ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "おもちゃ（50cm未満）",
+   "yomi": "おもちゃ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "折り紙",
+   "yomi": "おりがみ",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "折り込みチラシ",
+   "yomi": "おりこみちらし",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "折りたたみいす（30cm以上）",
+   "yomi": "おりたたみいす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "折りたたみ傘",
+   "yomi": "おりたたみかさ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "折りたたみ机（30cm以上）",
+   "yomi": "おりたたみつくえ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "オルガン",
+   "yomi": "おるがん",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "おろしがね",
+   "yomi": "おろしがね",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "音楽キーボード用スタンド（鉄製）",
+   "yomi": "おんがくきーぼーどようすたんど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "温室",
+   "yomi": "おんしつ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "温水洗浄便座",
+   "yomi": "おんすいせんじょうべんざ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "温度計（水銀使用）",
+   "yomi": "おんどけい",
+   "category": "hazardous",
+   "note": "透明または半透明の袋で出してください。"
+  },
+  {
+   "name": "温度計（水銀を使用していないもの）",
+   "yomi": "おんどけい",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "OA用紙",
+   "yomi": "おーえーようし",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "オーディオ機器",
+   "yomi": "おーでぃおきき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "オーディオラック",
+   "yomi": "おーでぃおらっく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "オートバイ",
+   "yomi": "おーとばい",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "オーバーヘッドプロジェクター（50cm×40cm×20cm）",
+   "yomi": "おーばーへっどぷろじぇくたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "オーブン（電気・ガス）",
+   "yomi": "おーぶん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "オーブントースター",
+   "yomi": "おーぶんとーすたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "オーブンレンジ",
+   "yomi": "おーぶんれんじ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "オープンリールデッキ（オーディオ機器）",
+   "yomi": "おーぷんりーるでっき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "オール（ゴムボード用・プラ製）2本1組",
+   "yomi": "おーる2ほん1くみ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "会議室用のテーブル",
+   "yomi": "かいぎしつようのてーぶる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "介護用お風呂のいす",
+   "yomi": "かいごようおふろのいす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "介護用ベッド（電動式）",
+   "yomi": "かいごようべっど",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "介護用ポータブルトイレ",
+   "yomi": "かいごようぽーたぶるといれ",
+   "category": "oversized",
+   "note": "衛生的に処理されたものに限ります。（申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755）"
+  },
+  {
+   "name": "懐中電灯",
+   "yomi": "かいちゅうでんとう",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "懐中電灯",
+   "yomi": "かいちゅうでんとう",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "買い物車（手押し式買い物用車）",
+   "yomi": "かいものしゃ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "買い物袋（スーパーのレジ袋など）",
+   "yomi": "かいものぶくろ",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "貝類",
+   "yomi": "かいるい",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "カイロ（使い捨て用）",
+   "yomi": "かいろ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "カウンターテーブル",
+   "yomi": "かうんたーてーぶる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "火炎バーナー（草刈用）",
+   "yomi": "かえんばーなー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "化学ぞうきん",
+   "yomi": "かがくぞうきん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "化学薬品",
+   "yomi": "かがくやくひん",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "鍵",
+   "yomi": "かぎ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "各種ケーブル類",
+   "yomi": "かくしゅけーぶるるい",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "各種ケーブル類",
+   "yomi": "かくしゅけーぶるるい",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "家具調こたつ",
+   "yomi": "かぐちょうこたつ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "掛け時計（50cm以上）",
+   "yomi": "かけどけい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "かご（プラスチック製）",
+   "yomi": "かご",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "かご（木製、竹製など）",
+   "yomi": "かご",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "かご（50cm以上）",
+   "yomi": "かご",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "傘（何本でも）",
+   "yomi": "かさ",
+   "category": "non_burnable",
+   "note": "指定収集袋に三分の一程度入れて出してください。"
+  },
+  {
+   "name": "傘立て",
+   "yomi": "かさだて",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "飾り棚",
+   "yomi": "かざりだな",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "加湿器（30cm以上）",
+   "yomi": "かしつき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "苛性ソーダ",
+   "yomi": "かせいそーだ",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "カセットコンロ（1口のもの）",
+   "yomi": "かせっとこんろ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "カセットテープ",
+   "yomi": "かせっとてーぷ",
+   "category": "hazardous",
+   "note": "透明または半透明の袋で出してください。"
+  },
+  {
+   "name": "カセットテープ入れ",
+   "yomi": "かせっとてーぷいれ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "カセットデッキ（30cm以上）",
+   "yomi": "かせっとでっき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "カセットボンベ（使い切って）",
+   "yomi": "かせっとぼんべ",
+   "category": "hazardous",
+   "note": "使い切ってから、透明または半透明の袋で出してください。"
+  },
+  {
+   "name": "固めた食用油",
+   "yomi": "かためたしょくようあぶら",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "カタログ",
+   "yomi": "かたろぐ",
+   "category": "paper_cloth",
+   "note": "サンプルなどは取り除いてください。"
+  },
+  {
+   "name": "カッター・カミソリの刃",
+   "yomi": "かったー・かみそりのは",
+   "category": "non_burnable",
+   "note": "新聞紙やボロ布で包んでキケンなどと表示して指定収集袋へ入れてください。"
+  },
+  {
+   "name": "カッパ（雨具）",
+   "yomi": "かっぱ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "カップ酒のびん",
+   "yomi": "かっぷざけのびん",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "カップ麺の外装フィルム",
+   "yomi": "かっぷめんのがいそうふぃるむ",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "カップ麺の容器（紙製）",
+   "yomi": "かっぷめんのようき",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "カップ麺の容器（プラスチック製、発泡スチロール製）",
+   "yomi": "かっぷめんのようき",
+   "category": "plastic",
+   "note": "残り水で軽くすすいで出してください。"
+  },
+  {
+   "name": "カップ麺の容器のフタ（紙製）",
+   "yomi": "かっぷめんのようきのふた",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "カップ麺の容器のフタ（プラスチック製）",
+   "yomi": "かっぷめんのようきのふた",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "かつら",
+   "yomi": "かつら",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "家庭用ゲーム機",
+   "yomi": "かていようげーむき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "家庭用ファクシミリ",
+   "yomi": "かていようふぁくしみり",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "門松",
+   "yomi": "かどまつ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "かなづち",
+   "yomi": "かなづち",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "カバン",
+   "yomi": "かばん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "カバン（状態の良いもの）",
+   "yomi": "かばん",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "花びん（ガラス製、陶器製、金属製、プラスチック製）",
+   "yomi": "かびん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "壁掛け",
+   "yomi": "かべかけ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "鎌",
+   "yomi": "かま",
+   "category": "non_burnable",
+   "note": "新聞紙やボロ布で包んでキケンなどと表示して指定収集袋へ入れてください。"
+  },
+  {
+   "name": "紙おむつ（汚物を取り除く）（※無料）",
+   "yomi": "かみおむつ",
+   "category": "burnable",
+   "note": "無料のため、透明または半透明の袋で「おむつ」と表示して出してください。"
+  },
+  {
+   "name": "紙コップ",
+   "yomi": "かみこっぷ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "神棚",
+   "yomi": "かみだな",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755（※装飾品等を取り除いた木製のもの）"
+  },
+  {
+   "name": "髪の毛",
+   "yomi": "かみのけ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "紙パック（中が銀色でないもの）",
+   "yomi": "かみぱっく",
+   "category": "paper_cloth",
+   "note": "洗って開いて乾かして、束ねて出してください。"
+  },
+  {
+   "name": "紙パック（中が銀色）",
+   "yomi": "かみぱっく",
+   "category": "paper_cloth",
+   "note": "お酒のパックなど内側にアルミがはってあるパックは、それのみ束ねると、紙パックとして回収します。（注ぎ口のプラスチックは極力外してください。）"
+  },
+  {
+   "name": "紙袋",
+   "yomi": "かみぶくろ",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "火薬",
+   "yomi": "かやく",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "カラオケ装置",
+   "yomi": "からおけそうち",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "カラオケ通信用チューナー",
+   "yomi": "からおけつうしんようちゅーなー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "カラーコーン",
+   "yomi": "からーこーん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "カラーボックス",
+   "yomi": "からーぼっくす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "刈込バサミ",
+   "yomi": "かりこみばさみ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "カレンダー",
+   "yomi": "かれんだー",
+   "category": "paper_cloth",
+   "note": "金具やプラスチックを外して出してください。"
+  },
+  {
+   "name": "革製衣料品（靴を除く）",
+   "yomi": "かわせいいりょうひん",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "缶（一斗缶）",
+   "yomi": "かん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "缶（飲食用以外、ペンキ缶）",
+   "yomi": "かん",
+   "category": "non_burnable",
+   "note": "中身は使い切るか、紙・布等にしみ込ませて燃やせるごみに出してください。"
+  },
+  {
+   "name": "缶（飲食用）",
+   "yomi": "かん",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "簡易シャワー",
+   "yomi": "かんいしゃわー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "簡易水道栓",
+   "yomi": "かんいすいどうせん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "簡易便器（衛生的に処理されたものに限る）",
+   "yomi": "かんいべんき",
+   "category": "oversized",
+   "note": "衛生的に処理されたものに限ります。（申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755）"
+  },
+  {
+   "name": "換気扇",
+   "yomi": "かんきせん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "緩衝剤",
+   "yomi": "かんしょうざい",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "乾燥機（食器用）",
+   "yomi": "かんそうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "乾燥機（洗濯物用）",
+   "yomi": "かんそうき",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "乾燥機を置く台",
+   "yomi": "かんそうきをおくだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "乾燥剤（シリカゲル）",
+   "yomi": "かんそうざい",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "乾電池",
+   "yomi": "かんでんち",
+   "category": "hazardous",
+   "note": "透明または半透明の袋で出してください。"
+  },
+  {
+   "name": "感熱紙（ファックス用紙やレシートなど）",
+   "yomi": "かんねつし",
+   "category": "burnable",
+   "note": "特殊な薬品が使われているため、燃やせるごみへ出してください。"
+  },
+  {
+   "name": "観葉植物（140cm）",
+   "yomi": "かんようしょくぶつ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "カーテン（布製）",
+   "yomi": "かーてん",
+   "category": "paper_cloth",
+   "note": "金具を外してから出してください。"
+  },
+  {
+   "name": "カーテンレール",
+   "yomi": "かーてんれーる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "カード類",
+   "yomi": "かーどるい",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "カーペット（1帖以上）",
+   "yomi": "かーぺっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "カーボン紙",
+   "yomi": "かーぼんし",
+   "category": "burnable",
+   "note": "特殊な薬品が使われているため、燃やせるごみへ出してください。"
+  },
+  {
+   "name": "学習机",
+   "yomi": "がくしゅうづくえ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "学習机のいす",
+   "yomi": "がくしゅうづくえのいす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "学習机の上の棚",
+   "yomi": "がくしゅうづくえのうえのたな",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "額縁（一辺が1m以上）",
+   "yomi": "がくぶち",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "額縁（一辺が1m未満）",
+   "yomi": "がくぶち",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ガス釜",
+   "yomi": "がすかま",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ガスコンロ（2口以上）",
+   "yomi": "がすこんろ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ガスコンロの風よけ（ステン製）（147cm×51cm）",
+   "yomi": "がすこんろのかぜよけ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ガスストーブ",
+   "yomi": "がすすとーぶ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ガスファンヒーター",
+   "yomi": "がすふぁんひーたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ガスボンベ類 （炭酸水メーカーの製品含む）",
+   "yomi": "がすぼんべるい",
+   "category": "not_collected",
+   "note": "製造元もしくは販売店にご返却するようお願いいたします。"
+  },
+  {
+   "name": "ガソリン",
+   "yomi": "がそりん",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "楽器（ギター類30cm以上）",
+   "yomi": "がっき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "楽器（笛類30cm未満）",
+   "yomi": "がっき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ガラス（姿見）",
+   "yomi": "がらす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ガラス食器",
+   "yomi": "がらすしょっき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ガラステーブル",
+   "yomi": "がらすてーぶる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ガラステーブルの枠（30cm×80cm×40cm）",
+   "yomi": "がらすてーぶるのわく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ガリ版",
+   "yomi": "がりばん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ガード（ストーブ用）",
+   "yomi": "がーど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "木くず",
+   "yomi": "きくず",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "キックボード",
+   "yomi": "きっくぼーど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "キッチンペーパー",
+   "yomi": "きっちんぺーぱー",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "キッチンラック",
+   "yomi": "きっちんらっく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "キッチンワゴン",
+   "yomi": "きっちんわごん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "着物用ハンガー",
+   "yomi": "きものようはんがー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "キャスター付スーツケース",
+   "yomi": "きゃすたーづけすーつけーす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "脚立（30cm以上）",
+   "yomi": "きゃたつ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "キャリー（ショッピングカート、シルバーカー）",
+   "yomi": "きゃりー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "キャリーバッグ",
+   "yomi": "きゃりーばっぐ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "キャンバス",
+   "yomi": "きゃんばす",
+   "category": "burnable",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "キャンピングテーブル",
+   "yomi": "きゃんぴんぐてーぶる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "急須",
+   "yomi": "きゅうす",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "給湯器",
+   "yomi": "きゅうとうき",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "吸入器",
+   "yomi": "きゅうにゅうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "給油ポンプ",
+   "yomi": "きゅうゆぽんぷ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "教科書",
+   "yomi": "きょうかしょ",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "鏡台（一面鏡及び三面鏡）",
+   "yomi": "きょうだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "鏡台の台のみ",
+   "yomi": "きょうだいのだいのみ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "金魚運動マシン",
+   "yomi": "きんぎょうんどうましん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "金庫（耐火式）",
+   "yomi": "きんこ",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "金庫（手提げ）",
+   "yomi": "きんこ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "金属バット",
+   "yomi": "きんぞくばっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "キーホルダー",
+   "yomi": "きーほるだー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "キーボード（パソコン用）",
+   "yomi": "きーぼーど",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "キーボード（長さ1m以内の音楽用）",
+   "yomi": "きーぼーど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "キーボード（パソコン用）",
+   "yomi": "きーぼーど",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "義足",
+   "yomi": "ぎそく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ギター",
+   "yomi": "ぎたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ギターのアンプ",
+   "yomi": "ぎたーのあんぷ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "牛乳パック",
+   "yomi": "ぎゅうにゅうぱっく",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "牛乳びん",
+   "yomi": "ぎゅうにゅうびん",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "空気入れ",
+   "yomi": "くうきいれ",
+   "category": "non_burnable",
+   "note": "指定収集袋に三分の一程度入れて出してください。"
+  },
+  {
+   "name": "空気清浄機",
+   "yomi": "くうきせいじょうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "釘",
+   "yomi": "くぎ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "草（※無料）",
+   "yomi": "くさ",
+   "category": "burnable",
+   "note": "無料のため、透明または半透明の袋で出してください。"
+  },
+  {
+   "name": "串（金属製、プラスチック製）",
+   "yomi": "くし",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "櫛（金属製、プラスチック製）",
+   "yomi": "くし",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "串（竹製、木製）",
+   "yomi": "くし",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "櫛（竹製、木製）",
+   "yomi": "くし",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "薬",
+   "yomi": "くすり",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "薬等の紙箱",
+   "yomi": "くすりとうのかみばこ",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "薬の紙袋",
+   "yomi": "くすりのかみぶくろ",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "薬の容器（プラスチック製）",
+   "yomi": "くすりのようき",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "果物くず",
+   "yomi": "くだものくず",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "果物の保護材（発泡スチロール）",
+   "yomi": "くだもののほござい",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "口紅ケース",
+   "yomi": "くちべにけーす",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "クッキングカッター",
+   "yomi": "くっきんぐかったー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "クッション",
+   "yomi": "くっしょん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "クッションカバー",
+   "yomi": "くっしょんかばー",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "くつ",
+   "yomi": "くつ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "靴下",
+   "yomi": "くつした",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "靴べら（金属製、プラスチック製）",
+   "yomi": "くつべら",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "靴べら（木製）",
+   "yomi": "くつべら",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "熊手（金属製）",
+   "yomi": "くまで",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "クリスマスツリー（150cm以上）",
+   "yomi": "くりすますつりー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "クリスマスツリー（150cm未満）",
+   "yomi": "くりすますつりー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "クリップ",
+   "yomi": "くりっぷ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "クリーニングビニール袋",
+   "yomi": "くりーにんぐびにーるぶくろ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "車いす（電動車いすを除く）",
+   "yomi": "くるまいす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "車のカバー",
+   "yomi": "くるまのかばー",
+   "category": "non_burnable",
+   "note": "たたんで、指定収集袋に入れてください。"
+  },
+  {
+   "name": "クレヨン",
+   "yomi": "くれよん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "クワ（大きいもの）",
+   "yomi": "くわ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "クーファン（赤ちゃん用のかご）",
+   "yomi": "くーふぁん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "クーラーボックス（30cm以上）",
+   "yomi": "くーらーぼっくす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "クーラーボックス（30cm未満）",
+   "yomi": "くーらーぼっくす",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "グラス",
+   "yomi": "ぐらす",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "グローブ（野球）",
+   "yomi": "ぐろーぶ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "グローランプ",
+   "yomi": "ぐろーらんぷ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "軍手",
+   "yomi": "ぐんて",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "蛍光管",
+   "yomi": "けいこうかん",
+   "category": "hazardous",
+   "note": ""
+  },
+  {
+   "name": "携帯型ゲーム機（及び付属品）",
+   "yomi": "けいたいがたげーむき",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "携帯電話",
+   "yomi": "けいたいでんわ",
+   "category": "small_appliance",
+   "note": "市役所本庁舎とごみ対策課庁舎のみの回収です。 又はリチウムイオン電池を外して燃やせないごみへ出してください。（外したリチウムイオン電池はリサイクル協力店あるいは小型家電回収ボックスまでお持ちください。）  リサイクル協力店検索 https：／／www．jbrc．com／general／recycle＿kensaku／"
+  },
+  {
+   "name": "携帯用ラジオ",
+   "yomi": "けいたいようらじお",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "毛糸",
+   "yomi": "けいと",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "軽量ブロック",
+   "yomi": "けいりょうぶろっく",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "消しゴム",
+   "yomi": "けしごむ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "化粧品の容器（びん製）",
+   "yomi": "けしょうひんのようき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "化粧品の容器（プラスチック製）",
+   "yomi": "けしょうひんのようき",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "ケチャップの容器（びん）",
+   "yomi": "けちゃっぷのようき",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "ケチャップの容器（プラスチック製）",
+   "yomi": "けちゃっぷのようき",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "健康器",
+   "yomi": "けんこうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "建築廃材",
+   "yomi": "けんちくはいざい",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "剣道用具（一式）",
+   "yomi": "けんどうようぐ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "鍵盤ハーモニカ",
+   "yomi": "けんばんはーもにか",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "げた箱",
+   "yomi": "げたばこ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "玄関マット",
+   "yomi": "げんかんまっと",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "幻燈機",
+   "yomi": "げんとうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ゲーム機（大型・業務用）",
+   "yomi": "げーむき",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "ゲーム機（携帯・据置型）",
+   "yomi": "げーむき",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "高圧洗浄機（50cm程度）",
+   "yomi": "こうあつせんじょうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "高枝切りばさみ",
+   "yomi": "こうえだぎりばさみ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "工具（ドライバー、ハンマーなど）",
+   "yomi": "こうぐ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "工具入れ（30cm以上）",
+   "yomi": "こうぐいれ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "小型制御弁式鉛蓄電池",
+   "yomi": "こがたせいぎょべんしきなまりちくでんち",
+   "category": "small_appliance",
+   "note": "●使用機器から取り外せる場合は、ビニールテープなどで端子部を絶縁して、JBRC登録協力店の回収ボックスへ出してください。 ※市役所本庁舎1階、ごみ対策課にも小型充電式電池回収ボックスを設置しています。  ●使用機器から取り外せない場合は、小型家電回収ボックスに出してください。"
+  },
+  {
+   "name": "小型の飲料パック",
+   "yomi": "こがたのいんりょうぱっく",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "こたつ",
+   "yomi": "こたつ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "こたつ板",
+   "yomi": "こたついた",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "こたつのヒーターのみ",
+   "yomi": "こたつのひーたーのみ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "コップ",
+   "yomi": "こっぷ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "琴",
+   "yomi": "こと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "子供用遊具（ブランコ及び滑り台を除く）",
+   "yomi": "こどもようゆうぐ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "コピー機（家庭用のもの）",
+   "yomi": "こぴーき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "米びつ",
+   "yomi": "こめびつ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "米びつ付き収納庫（レンジ台）",
+   "yomi": "こめびつつきしゅうのうこ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "コンクリート",
+   "yomi": "こんくりーと",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "コンデンサー",
+   "yomi": "こんでんさー",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "コンポスター（庭で使用する緑の容器、生ごみ処理用）",
+   "yomi": "こんぽすたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "コンロ（ガス二口以上）",
+   "yomi": "こんろ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "コンロ（一口）",
+   "yomi": "こんろ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "コート掛け",
+   "yomi": "こーとかけ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "コート類（傷んでないもの）",
+   "yomi": "こーとるい",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "コード（10m程度、ドラム式）",
+   "yomi": "こーど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "コーヒーメーカー",
+   "yomi": "こーひーめーかー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "碁石",
+   "yomi": "ごいし",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "五月人形セット（棚込み）",
+   "yomi": "ごがつにんぎょうせっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "五月人形段飾り用棚",
+   "yomi": "ごがつにんぎょうだんかざりようたな",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ござ",
+   "yomi": "ござ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "碁盤（囲碁、将棋盤）",
+   "yomi": "ごばん",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "ごみ箱（50cm以上）",
+   "yomi": "ごみばこ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ゴム類",
+   "yomi": "ごむるい",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ゴルフクラブ",
+   "yomi": "ごるふくらぶ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ゴルフシューズ",
+   "yomi": "ごるふしゅーず",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ゴルフネット",
+   "yomi": "ごるふねっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ゴルフバッグ",
+   "yomi": "ごるふばっぐ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ゴルフパター練習台",
+   "yomi": "ごるふぱたーれんしゅうだい",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "サイクリングマシーン",
+   "yomi": "さいくりんぐましーん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "裁断台",
+   "yomi": "さいだんだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "サイドボード",
+   "yomi": "さいどぼーど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "財布",
+   "yomi": "さいふ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "作業服",
+   "yomi": "さぎょうふく",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "酒カップ",
+   "yomi": "さけかっぷ",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "刺身容器（トレイ容器）",
+   "yomi": "さしみようき",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "サックス（楽器）",
+   "yomi": "さっくす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "殺虫剤スプレー缶",
+   "yomi": "さっちゅうざいすぷれーかん",
+   "category": "hazardous",
+   "note": ""
+  },
+  {
+   "name": "サマーベット",
+   "yomi": "さまーべっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "皿",
+   "yomi": "さら",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "サラダ油の容器（缶製）",
+   "yomi": "さらだあぶらのようき",
+   "category": "bin_can",
+   "note": "きれいに洗うか拭き取ってください。"
+  },
+  {
+   "name": "サラダ油の容器（プラスチック製）",
+   "yomi": "さらだあぶらのようき",
+   "category": "plastic",
+   "note": "きれいに洗うか拭き取ってください。汚れが落ちないものは燃やせないごみへ出してください。"
+  },
+  {
+   "name": "三脚（折り畳んだ状態で30cm以上）",
+   "yomi": "さんきゃく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "サングラス",
+   "yomi": "さんぐらす",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "サンダル",
+   "yomi": "さんだる",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "三面鏡台",
+   "yomi": "さんめんきょうだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "三輪車",
+   "yomi": "さんりんしゃ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "サーキュレーター",
+   "yomi": "さーきゅれーたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "サーフボード",
+   "yomi": "さーふぼーど",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "座いす",
+   "yomi": "ざいす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "座卓",
+   "yomi": "ざたく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "雑誌",
+   "yomi": "ざっし",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "座布団（一度に5枚以上出す場合）",
+   "yomi": "ざぶとん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "座布団（4枚まで）",
+   "yomi": "ざぶとん",
+   "category": "burnable",
+   "note": "4枚まで指定収集袋で出すことができます。"
+  },
+  {
+   "name": "ざる（金属製、プラスチック製）",
+   "yomi": "ざる",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ざる（竹製）",
+   "yomi": "ざる",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "残飯",
+   "yomi": "ざんぱん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "敷物・ジュータン",
+   "yomi": "しきもの・じゅーたん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "システムキッチン",
+   "yomi": "しすてむきっちん",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "下着",
+   "yomi": "したぎ",
+   "category": "paper_cloth",
+   "note": "又は燃やせるごみへ出してください。"
+  },
+  {
+   "name": "湿布薬",
+   "yomi": "しっぷやく",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "室外機",
+   "yomi": "しつがいき",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "室外機の上利用の花台",
+   "yomi": "しつがいきのうえりようのかだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "室外給湯器",
+   "yomi": "しつがいきゅうとうき",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "竹刀",
+   "yomi": "しない",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "芝刈り機",
+   "yomi": "しばがりき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "写真",
+   "yomi": "しゃしん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "写真現像機（家庭用）",
+   "yomi": "しゃしんげんぞうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "写真のネガ",
+   "yomi": "しゃしんのねが",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "シャベル",
+   "yomi": "しゃべる",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "三味線",
+   "yomi": "しゃみせん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "しゃもじ（金属、プラスチック製）",
+   "yomi": "しゃもじ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "しゃもじ（木製）",
+   "yomi": "しゃもじ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "シャワー",
+   "yomi": "しゃわー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "シャンデリア",
+   "yomi": "しゃんでりあ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "シャンプー立て（50cm以上）",
+   "yomi": "しゃんぷーだて",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "シャンプー・洗剤の容器",
+   "yomi": "しゃんぷー・せんざいのようき",
+   "category": "plastic",
+   "note": "残り水で軽くすすいで出してください。"
+  },
+  {
+   "name": "シャープペンシル",
+   "yomi": "しゃーぷぺんしる",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "週刊誌",
+   "yomi": "しゅうかんし",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "修正ペン",
+   "yomi": "しゅうせいぺん",
+   "category": "non_burnable",
+   "note": "中身は使い切るか、紙・布等にしみ込ませて燃やせるごみに出してください。"
+  },
+  {
+   "name": "シュノーケル",
+   "yomi": "しゅのーける",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "シュレッダー",
+   "yomi": "しゅれっだー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "シュレッダーの紙",
+   "yomi": "しゅれっだーのかみ",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "瞬間湯沸器",
+   "yomi": "しゅんかんゆわかしき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "シューズ",
+   "yomi": "しゅーず",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "背負子（しょいこ）",
+   "yomi": "しょいこ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "消火器",
+   "yomi": "しょうかき",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "照明器具",
+   "yomi": "しょうめいきぐ",
+   "category": "oversized",
+   "note": "電球、蛍光管は外してください。申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "しょうゆの容器（びん製）",
+   "yomi": "しょうゆのようき",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "しょうゆの容器（プラスチック製）",
+   "yomi": "しょうゆのようき",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "しょうゆの容器（ペットボトル製）",
+   "yomi": "しょうゆのようき",
+   "category": "pet",
+   "note": ""
+  },
+  {
+   "name": "食卓用テーブル",
+   "yomi": "しょくたくようてーぶる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "食品トレイ",
+   "yomi": "しょくひんとれい",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "食器（漆器製、木製）",
+   "yomi": "しょっき",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "食器（陶器製、磁器製、ガラス製）",
+   "yomi": "しょっき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "食器洗い乾燥機（洗いと乾燥の一体型）（卓上タイプ）",
+   "yomi": "しょっきあらいかんそうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "食器洗い機（卓上タイプ）",
+   "yomi": "しょっきあらいき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "食器乾燥機（卓上タイプ）",
+   "yomi": "しょっきかんそうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "食器棚",
+   "yomi": "しょっきたな",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ショッピングカー・シルバーカー",
+   "yomi": "しょっぴんぐかー・しるばーかー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "使用済み注射針",
+   "yomi": "しようずみちゅうしゃはり",
+   "category": "not_collected",
+   "note": "処方された医療機関に戻すか、市内薬剤師会加入薬局で回収しています。薬局は下記URLをご確認ください。 http：／／www．seibuyaku．jp／kurume．html"
+  },
+  {
+   "name": "七輪",
+   "yomi": "しりちん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "七輪（50cm以上）",
+   "yomi": "しりちん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "芯（トイレットペーパー・ラップ）",
+   "yomi": "しん",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "シングルベッド（ベッドマットを除く）",
+   "yomi": "しんぐるべっど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "シンセサイザー",
+   "yomi": "しんせさいざー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "シーツ",
+   "yomi": "しーつ",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "CD（コンパクトディスク）",
+   "yomi": "しーでぃー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "CDプレーヤー（携帯型）",
+   "yomi": "しーでぃーぷれーやー",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "CDラジカセ",
+   "yomi": "しーでぃーらじかせ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "CD・MDプレーヤー",
+   "yomi": "しーでぃー・えむでぃーぷれーやー",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "磁石",
+   "yomi": "じしゃく",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "辞書・辞典",
+   "yomi": "じしょ・じてん",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "自転車（電動アシスト付きのバッテリーは不可）",
+   "yomi": "じてんしゃ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "自転車の車輪のみ",
+   "yomi": "じてんしゃのしゃりんのみ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "自転車のタイヤ（チューブ）",
+   "yomi": "じてんしゃのたいや",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "自転車のハンドルのみ",
+   "yomi": "じてんしゃのはんどるのみ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "自転車のフレームのみ",
+   "yomi": "じてんしゃのふれーむのみ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "自転車用いす（子供用補助いす）",
+   "yomi": "じてんしゃよういす",
+   "category": "non_burnable",
+   "note": "大きいものは粗大ごみとなります。申し込んでください。"
+  },
+  {
+   "name": "自転車用かご",
+   "yomi": "じてんしゃようかご",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "自動車のカバー",
+   "yomi": "じどうしゃのかばー",
+   "category": "non_burnable",
+   "note": "たたんで、指定収集袋に入れてください。"
+  },
+  {
+   "name": "自動車部品 カーステレオ",
+   "yomi": "じどうしゃぶひんかーすてれお",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "自動車部品 スキーキャリア",
+   "yomi": "じどうしゃぶひんすきーきゃりあ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "自動車部品 チャイルドシート",
+   "yomi": "じどうしゃぶひんちゃいるどしーと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "自動車部品 ホイールキャップ",
+   "yomi": "じどうしゃぶひんほいーるきゃっぷ",
+   "category": "non_burnable",
+   "note": "4枚まで指定収集袋で出すことができます。"
+  },
+  {
+   "name": "自動麻雀卓",
+   "yomi": "じどうまーじゃんたく",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "蛇口（水道用）",
+   "yomi": "じゃぐち",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ジャケット",
+   "yomi": "じゃけっと",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "ジャッキ（自動車用）（油圧は不可）",
+   "yomi": "じゃっき",
+   "category": "oversized",
+   "note": ""
+  },
+  {
+   "name": "ジャングルジム",
+   "yomi": "じゃんぐるじむ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ジャー炊飯器（30cm以上）",
+   "yomi": "じゃーすいはんき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "重量ブロック",
+   "yomi": "じゅうりょうぶろっく",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "ジュニアシート",
+   "yomi": "じゅにあしーと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "循環扇（室内の空気を出し入れしたり、循環させる機械、温度は調整できないもの）",
+   "yomi": "じゅんかんおうぎ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ジューサー（ミキサー）",
+   "yomi": "じゅーさー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ジュースの容器（紙製）",
+   "yomi": "じゅーすのようき",
+   "category": "paper_cloth",
+   "note": "小型の飲料パックは燃やせるごみへ出してください。"
+  },
+  {
+   "name": "ジュースの容器（缶製）",
+   "yomi": "じゅーすのようき",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "ジュースの容器（びん製）",
+   "yomi": "じゅーすのようき",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "ジュースの容器（ペットボトル製）",
+   "yomi": "じゅーすのようき",
+   "category": "pet",
+   "note": ""
+  },
+  {
+   "name": "ジュータン・敷物",
+   "yomi": "じゅーたん・しきもの",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "浄化槽モーター（30cm以上）",
+   "yomi": "じょうかそうもーたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "定規（金属製、プラスチック製）",
+   "yomi": "じょうぎ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "定規（木製）",
+   "yomi": "じょうぎ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "浄水器（蛇口に直結するもの）",
+   "yomi": "じょうすいき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "浄水器（30cm以上）",
+   "yomi": "じょうすいき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ジョウバ（ロディオボーイ）",
+   "yomi": "じょうば",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "除湿機",
+   "yomi": "じょしめき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "除湿剤（水を除いて）",
+   "yomi": "じょしめざい",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "人工芝（5mまで）",
+   "yomi": "じんこうしば",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "人体 洋裁用（ボディ）",
+   "yomi": "じんたいようさいよう",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ジーンズ",
+   "yomi": "じーんず",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "水槽（最も長い辺が30cm以上90cm以下）",
+   "yomi": "すいそう",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "水槽用クーラー",
+   "yomi": "すいそうようくーらー",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "水槽用照明器具",
+   "yomi": "すいそうようしょうめいきぐ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "水槽用ろ過装置（30cm以上）",
+   "yomi": "すいそうようろかそうち",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "水筒（金属製、プラスチック製）",
+   "yomi": "すいとう",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "水道の蛇口",
+   "yomi": "すいどうのじゃぐち",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "炊飯器（30cm以上）",
+   "yomi": "すいはんき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "炊飯器（30cm未満）",
+   "yomi": "すいはんき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "スカート",
+   "yomi": "すかーと",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "姿見（一面鏡）",
+   "yomi": "すがたみ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スキャナー（パソコンの周辺機器）",
+   "yomi": "すきゃなー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スキー板（ストック含む）",
+   "yomi": "すきーいた",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スキーウェア",
+   "yomi": "すきーうぇあ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "スキーキャリア",
+   "yomi": "すきーきゃりあ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スキー靴",
+   "yomi": "すきーくつ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "スキーバッグ",
+   "yomi": "すきーばっぐ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "スキー用ストック（2本）",
+   "yomi": "すきーようすとっく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スクリーン（映写、家庭用）",
+   "yomi": "すくりーん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スクリーンテント",
+   "yomi": "すくりーんてんと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スクーター",
+   "yomi": "すくーたー",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "スケート靴",
+   "yomi": "すけーとぐつ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "スケートボード",
+   "yomi": "すけーとぼーど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スコップ",
+   "yomi": "すこっぷ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "寿司の容器（プラスチック製）",
+   "yomi": "すしのようき",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "すずり",
+   "yomi": "すずり",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "スタイリー（健康器）",
+   "yomi": "すたいりー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スタンド（蛍光式）",
+   "yomi": "すたんど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スタンプ台",
+   "yomi": "すたんぷだい",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "すだれ",
+   "yomi": "すだれ",
+   "category": "burnable",
+   "note": "指定収集袋に三分の一程度入れて出してください。よしずは粗大ごみとなりますので申し込んでください。"
+  },
+  {
+   "name": "スチール缶",
+   "yomi": "すちーるかん",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "スチール机",
+   "yomi": "すちーるつくえ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スティック糊容器",
+   "yomi": "すてぃっくのりようき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ステッパー（健康器）",
+   "yomi": "すてっぱー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ステレオ",
+   "yomi": "すてれお",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ステレオアンプ",
+   "yomi": "すてれおあんぷ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ステレオセット",
+   "yomi": "すてれおせっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ストッカー（箱状の物置）",
+   "yomi": "すとっかー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ストッキング",
+   "yomi": "すとっきんぐ",
+   "category": "paper_cloth",
+   "note": "汚れている場合は、燃やせるごみへ出してください。"
+  },
+  {
+   "name": "ストライダー",
+   "yomi": "すとらいだー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ストロー",
+   "yomi": "すとろー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ストーブ",
+   "yomi": "すとーぶ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ストーブガード",
+   "yomi": "すとーぶがーど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "砂",
+   "yomi": "すな",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "スニーカー",
+   "yomi": "すにーかー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "すのこ（プラスチック製）",
+   "yomi": "すのこ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "すのこ（木製）",
+   "yomi": "すのこ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "スノーボード",
+   "yomi": "すのーぼーど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スパナ",
+   "yomi": "すぱな",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "スピーカー",
+   "yomi": "すぴーかー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スピーカースタンド",
+   "yomi": "すぴーかーすたんど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スプリング入りマットレス",
+   "yomi": "すぷりんぐいりまっとれす",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "スプレー缶（使い切って）",
+   "yomi": "すぷれーかん",
+   "category": "hazardous",
+   "note": "使い切ってから、透明または半透明の袋で出してください。"
+  },
+  {
+   "name": "スプーン（金属製、プラスチック製）",
+   "yomi": "すぷーん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "スプーン（竹製、木製）",
+   "yomi": "すぷーん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "滑り台",
+   "yomi": "すべりだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スポンジ",
+   "yomi": "すぽんじ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "炭",
+   "yomi": "すみ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "スリッパ",
+   "yomi": "すりっぱ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "スリッパ立て",
+   "yomi": "すりっぱたて",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "スーツケース",
+   "yomi": "すーつけーす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ズボンプレッサー",
+   "yomi": "ずぼんぷれっさー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "生花",
+   "yomi": "せいか",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "製図台",
+   "yomi": "せいずだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "製図台のドラフター",
+   "yomi": "せいずだいのどらふたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "製図盤",
+   "yomi": "せいずばん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "製図盤の定規（重いもの、ドラフター）",
+   "yomi": "せいずばんのじょうぎ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "製図用電動プロセッサー（軽いもの）",
+   "yomi": "せいずようでんどうぷろせっさー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "精米機（家庭用）",
+   "yomi": "せいまいき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "清涼飲料水の容器（びん製）",
+   "yomi": "せいりょういんりょうすいのようき",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "清涼飲料水の容器（ペットボトル製）",
+   "yomi": "せいりょういんりょうすいのようき",
+   "category": "pet",
+   "note": ""
+  },
+  {
+   "name": "生理用品",
+   "yomi": "せいりようひん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "石油ストーブ（赤く光るもの）",
+   "yomi": "せきゆすとーぶ",
+   "category": "oversized",
+   "note": "タンクの灯油は抜いてください。（申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755）"
+  },
+  {
+   "name": "石油ファンヒーター（温風が出てくるもの）",
+   "yomi": "せきゆふぁんひーたー",
+   "category": "oversized",
+   "note": "タンクの灯油は抜いてください。（申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755）"
+  },
+  {
+   "name": "石油ポンプ（プラスチック製）",
+   "yomi": "せきゆぽんぷ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "せともの",
+   "yomi": "せともの",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "背広",
+   "yomi": "せびろ",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "セミダブルベッド（ベッドマットを除く）",
+   "yomi": "せみだぶるべっど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "セラミックファンヒーター",
+   "yomi": "せらみっくふぁんひーたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "セロハンテープ",
+   "yomi": "せろはんてーぷ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "セロハンテープの芯（紙製）",
+   "yomi": "せろはんてーぷのしん",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "洗剤容器（紙製）",
+   "yomi": "せんざいようき",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "洗剤容器（プラスチック製）",
+   "yomi": "せんざいようき",
+   "category": "plastic",
+   "note": "残り水で軽くすすいで出してください。"
+  },
+  {
+   "name": "洗濯機",
+   "yomi": "せんたくき",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "洗濯ばさみ",
+   "yomi": "せんたくばさみ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "栓抜き",
+   "yomi": "せんぬき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "扇風機",
+   "yomi": "せんぷうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "せんべいの袋（プラスチック製）",
+   "yomi": "せんべいのふくろ",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "洗面器",
+   "yomi": "せんめんき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "洗面台",
+   "yomi": "せんめんだい",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "セーター",
+   "yomi": "せーたー",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "ゼリーの容器（プラスチック製）",
+   "yomi": "ぜりーのようき",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "双眼鏡",
+   "yomi": "そうがんきょう",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "掃除機（ハンディタイプで30cm未満）",
+   "yomi": "そうじき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "掃除機（30cm以上）",
+   "yomi": "そうじき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "掃除機のごみ",
+   "yomi": "そうじきのごみ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "送風機",
+   "yomi": "そうふうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "足温器",
+   "yomi": "そくおんき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "即席めんの容器（発砲スチロール製）",
+   "yomi": "そくせきめんのようき",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "ソファー",
+   "yomi": "そふぁー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ソファーベッド（スプリング有）",
+   "yomi": "そふぁーべっど",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "ソファーベッド（スプリング無）",
+   "yomi": "そふぁーべっど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "そり",
+   "yomi": "そり",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ソースの容器（びん製）",
+   "yomi": "そーすのようき",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "ソースの容器（プラスチック製）",
+   "yomi": "そーすのようき",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "造花",
+   "yomi": "ぞうか",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ぞうきん",
+   "yomi": "ぞうきん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "ぞうり（化学繊維）",
+   "yomi": "ぞうり",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ぞうり（天然繊維）",
+   "yomi": "ぞうり",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "体温計（水銀使用）",
+   "yomi": "たいおんけい",
+   "category": "hazardous",
+   "note": "透明または半透明の袋で出してください。"
+  },
+  {
+   "name": "体温計（電子）",
+   "yomi": "たいおんけい",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "耐火金庫",
+   "yomi": "たいかきんこ",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "体重計",
+   "yomi": "たいじゅうけい",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "タイプライター（和文を除く）",
+   "yomi": "たいぷらいたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "タイヤ（自動車・バイク）",
+   "yomi": "たいや",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "タイヤチェーン（自動車部品）",
+   "yomi": "たいやちぇーん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "タイル",
+   "yomi": "たいる",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "タオル・タオルケット",
+   "yomi": "たおる・たおるけっと",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "卓上コンロ",
+   "yomi": "たくじょうこんろ",
+   "category": "non_burnable",
+   "note": "ボンベは取り外してください。"
+  },
+  {
+   "name": "竹馬",
+   "yomi": "たけうま",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "竹ぼうき",
+   "yomi": "たけぼうき",
+   "category": "burnable",
+   "note": "指定収集袋に三分の一程度入れて出してください。"
+  },
+  {
+   "name": "畳",
+   "yomi": "たたみ",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "卓球台",
+   "yomi": "たっきゅうだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "タッパー",
+   "yomi": "たっぱー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "たばこの吸殻",
+   "yomi": "たばこのすいがら",
+   "category": "burnable",
+   "note": "水でしめらせてから、燃やせるごみへ出してください。"
+  },
+  {
+   "name": "卵のパック（紙製）",
+   "yomi": "たまごのぱっく",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "卵のパック（プラスチック製）",
+   "yomi": "たまごのぱっく",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "たらい（50cm以上）",
+   "yomi": "たらい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "たわし",
+   "yomi": "たわし",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "たんす",
+   "yomi": "たんす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "タープ",
+   "yomi": "たーぷ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "大工道具（電動）セット （50cm四方の箱に4～5点入っている）",
+   "yomi": "だいくどうぐ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "台車",
+   "yomi": "だいしゃ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ダイニングテーブル",
+   "yomi": "だいにんぐてーぶる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ダイレクトメール（ビニールをとって）",
+   "yomi": "だいれくとめーる",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "脱水機",
+   "yomi": "だっすいき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ダブルベッド（ベッドマットを除く）",
+   "yomi": "だぶるべっど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ダンベル",
+   "yomi": "だんべる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "暖房便座",
+   "yomi": "だんぼうべんざ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "チェスト",
+   "yomi": "ちぇすと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "チェーンソー",
+   "yomi": "ちぇーんそー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "地球儀（30cm以上）",
+   "yomi": "ちきゅうぎ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "蓄音機",
+   "yomi": "ちくおんき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "チャイルドシート",
+   "yomi": "ちゃいるどしーと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "茶箱",
+   "yomi": "ちゃばこ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "チューナー（BS用）",
+   "yomi": "ちゅーなー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "調味料の容器（缶製）",
+   "yomi": "ちょうみりょうのようき",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "調味料の容器（びん製）",
+   "yomi": "ちょうみりょうのようき",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "調味料の容器（プラスチック製）",
+   "yomi": "ちょうみりょうのようき",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "ちり紙（使用済み）",
+   "yomi": "ちりがみ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "ついたて",
+   "yomi": "ついたて",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "使い捨てカイロ",
+   "yomi": "つかいすてかいろ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "使い捨てカイロの外袋",
+   "yomi": "つかいすてかいろのそとぶくろ",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "使い捨てカメラ",
+   "yomi": "つかいすてかめら",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "使い捨てカメラの外袋",
+   "yomi": "つかいすてかめらのそとぶくろ",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "使い捨てライター",
+   "yomi": "つかいすてらいたー",
+   "category": "hazardous",
+   "note": ""
+  },
+  {
+   "name": "机",
+   "yomi": "つくえ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "つけもの石",
+   "yomi": "つけものいし",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "土",
+   "yomi": "つち",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "つっぱり棚（1m以上）",
+   "yomi": "つっぱりたな",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "つまようじ",
+   "yomi": "つまようじ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "釣竿",
+   "yomi": "つりざお",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "停止板（自動車部品）",
+   "yomi": "ていしばん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "手押し車",
+   "yomi": "ておししゃ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "手提げ金庫",
+   "yomi": "てさげきんこ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "鉄アレイ",
+   "yomi": "てつあれい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "テニスラケット",
+   "yomi": "てにすらけっと",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "テプラ",
+   "yomi": "てぷら",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "テレビ",
+   "yomi": "てれび",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "テレビアンテナ（室外用）",
+   "yomi": "てれびあんてな",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "テレビ台",
+   "yomi": "てれびだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "テント（キャンプ用）",
+   "yomi": "てんと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "テーブル",
+   "yomi": "てーぶる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "テープデッキ",
+   "yomi": "てーぷでっき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "テープレコーダー",
+   "yomi": "てーぷれこーだー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ディスプレー パソコン用",
+   "yomi": "でぃすぷれーぱそこんよう",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "デジタルカメラ",
+   "yomi": "でじたるかめら",
+   "category": "small_appliance",
+   "note": "又はリチウムイオン電池を外して燃やせないごみへ出してください。（外したリチウムイオン電池はリサイクル協力店あるいは小型家電回収ボックスまでお持ちください。）  リサイクル協力店検索 https：／／www．jbrc．com／general／recycle＿kensaku／"
+  },
+  {
+   "name": "デジタル時計",
+   "yomi": "でじたるとけい",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "デスクトップパソコン",
+   "yomi": "ですくとっぷぱそこん",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "デッキチェアー",
+   "yomi": "でっきちぇあー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "デッキブラシ",
+   "yomi": "でっきぶらし",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "電気カーペット",
+   "yomi": "でんきかーぺっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "電気がま（30cm以上）",
+   "yomi": "でんきがま",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "電気こたつ",
+   "yomi": "でんきこたつ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "電気スタンド（30cm以上）",
+   "yomi": "でんきすたんど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "電気ストーブ",
+   "yomi": "でんきすとーぶ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "電気なべ",
+   "yomi": "でんきなべ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "電気の笠（30cm以上）",
+   "yomi": "でんきのかさ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "電気ポット",
+   "yomi": "でんきぽっと",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "電気毛布",
+   "yomi": "でんきもうふ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "電球",
+   "yomi": "でんきゅう",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "電子オルガン",
+   "yomi": "でんしおるがん",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "電子血圧計",
+   "yomi": "でんしけつあつけい",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "電子辞書",
+   "yomi": "でんしじしょ",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "電子体温計",
+   "yomi": "でんしたいおんけい",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "電子タバコ",
+   "yomi": "でんしたばこ",
+   "category": "hazardous",
+   "note": "小型充電式電池（リチウムイオン電池など）使用製品のうち、モバイルバッテリー、電子タバコ、電気シェーバー、電動歯ブラシの4品目を有害ごみとして収集しています。  小型充電式電池使用製品等の出し方（リチウムイオン電池など） https：／／www．city．higashikurume．lg．jp／kurashi／kankyo／shigen／gomishigen／1013815．html"
+  },
+  {
+   "name": "電子ピアノ",
+   "yomi": "でんしぴあの",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "電子レンジ",
+   "yomi": "でんしれんじ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "電卓",
+   "yomi": "でんたく",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "電卓",
+   "yomi": "でんたく",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "電動シェーバー",
+   "yomi": "でんどうしぇーばー",
+   "category": "hazardous",
+   "note": "小型充電式電池（リチウムイオン電池など）使用製品のうち、モバイルバッテリー、電子タバコ、電気シェーバー、電動歯ブラシの4品目を有害ごみとして収集しています。  小型充電式電池使用製品等の出し方（リチウムイオン電池など） https：／／www．city．higashikurume．lg．jp／kurashi／kankyo／shigen／gomishigen／1013815．html"
+  },
+  {
+   "name": "電動式車いす",
+   "yomi": "でんどうしきくるまいす",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "電動式ベッド",
+   "yomi": "でんどうしきべっど",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "電動自転車",
+   "yomi": "でんどうじてんしゃ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "電動歯ブラシ",
+   "yomi": "でんどうはぶらし",
+   "category": "hazardous",
+   "note": "小型充電式電池（リチウムイオン電池など）使用製品のうち、モバイルバッテリー、電子タバコ、電気シェーバー、電動歯ブラシの4品目を有害ごみとして収集しています。  小型充電式電池使用製品等の出し方（リチウムイオン電池など） https：／／www．city．higashikurume．lg．jp／kurashi／kankyo／shigen／gomishigen／1013815．html"
+  },
+  {
+   "name": "電話機（30cm未満）",
+   "yomi": "でんわき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "電話機（30cm未満）",
+   "yomi": "でんわき",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "電話機（FAX付含む30cm以上）",
+   "yomi": "でんわき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "電話機（FAX付30cm未満）",
+   "yomi": "でんわき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "電話台",
+   "yomi": "でんわだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "電話帳",
+   "yomi": "でんわちょう",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "砥石",
+   "yomi": "といし",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "トイレットペーパーの芯",
+   "yomi": "といれっとぺーぱーのしん",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "陶器",
+   "yomi": "とうき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "豆腐の容器（プラスチック製）",
+   "yomi": "とうふのようき",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "灯油",
+   "yomi": "とうゆ",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "灯油用ポリタンク（20L以上）",
+   "yomi": "とうゆようぽりたんく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "遠赤外線ヒーター",
+   "yomi": "とおせきがいせんひーたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "時計（50cm以上）",
+   "yomi": "とけい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "時計（50cm未満）",
+   "yomi": "とけい",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "戸棚",
+   "yomi": "とだな",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "トランク（旅行用の硬いバッグ）",
+   "yomi": "とらんく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "トランポリン（幼児用）",
+   "yomi": "とらんぽりん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "鳥かご（50cm以上）",
+   "yomi": "とりかご",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "塗料",
+   "yomi": "とりょう",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "トレイ（発砲スチロール製、プラスチック製）",
+   "yomi": "とれい",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "トロフィー（1m未満）",
+   "yomi": "とろふぃー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "トースター（30cm以上）",
+   "yomi": "とーすたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "トースター（30cm未満）",
+   "yomi": "とーすたー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "土鍋",
+   "yomi": "どなべ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ドライヤー",
+   "yomi": "どらいやー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ドライヤー",
+   "yomi": "どらいやー",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "ドラムセット",
+   "yomi": "どらむせっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ドレッサー",
+   "yomi": "どれっさー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ドレッシングの容器（びん製）",
+   "yomi": "どれっしんぐのようき",
+   "category": "bin_can",
+   "note": "残り水で軽くすすいで出してください。"
+  },
+  {
+   "name": "ドレッシングの容器（プラスチック製）",
+   "yomi": "どれっしんぐのようき",
+   "category": "plastic",
+   "note": "残り水で軽くすすいで出してください。"
+  },
+  {
+   "name": "泥",
+   "yomi": "どろ",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "ナイフ類",
+   "yomi": "ないふるい",
+   "category": "non_burnable",
+   "note": "新聞紙やボロ布で包んでキケンなどと表示して指定収集袋へ入れてください。"
+  },
+  {
+   "name": "長いす",
+   "yomi": "ながいす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "長靴",
+   "yomi": "ながぐつ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "納豆の容器（紙製・わら製）",
+   "yomi": "なっとうのようき",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "納豆の容器（発泡スチロール製）",
+   "yomi": "なっとうのようき",
+   "category": "plastic",
+   "note": "汚れている場合は、燃やせないごみへ出してください。"
+  },
+  {
+   "name": "ナプキン",
+   "yomi": "なぷきん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "鍋",
+   "yomi": "なべ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "生ごみ",
+   "yomi": "なまごみ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "波板",
+   "yomi": "なみいた",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "ニカド電池",
+   "yomi": "にかどでんち",
+   "category": "small_appliance",
+   "note": "●使用機器から取り外せる場合は、ビニールテープなどで端子部を絶縁して、JBRC登録協力店の回収ボックスへ出してください。 ※市役所本庁舎1階、ごみ対策課にも小型充電式電池回収ボックスを設置しています。  ●使用機器から取り外せない場合は、小型家電回収ボックスに出してください。"
+  },
+  {
+   "name": "二段ベッド（ベッドマットを除く）",
+   "yomi": "にだんべっど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ニッケル水素電池",
+   "yomi": "にっけるすいそでんち",
+   "category": "small_appliance",
+   "note": "●使用機器から取り外せる場合は、ビニールテープなどで端子部を絶縁して、JBRC登録協力店の回収ボックスへ出してください。 ※市役所本庁舎1階、ごみ対策課にも小型充電式電池回収ボックスを設置しています。  ●使用機器から取り外せない場合は、小型家電回収ボックスに出してください。"
+  },
+  {
+   "name": "乳児用具",
+   "yomi": "にゅうじようぐ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "人形ケース",
+   "yomi": "にんぎょうけーす",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ぬいぐるみ（その他でできているもの）",
+   "yomi": "ぬいぐるみ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ぬいぐるみ（布や綿でできているもの）",
+   "yomi": "ぬいぐるみ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "縫い針",
+   "yomi": "ぬいはり",
+   "category": "non_burnable",
+   "note": "新聞紙やボロ布で包んでキケンなどと表示して指定収集袋へ入れてください。"
+  },
+  {
+   "name": "ネクタイ",
+   "yomi": "ねくたい",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "猫砂（素材が紙、木質、おから、竹炭 など）",
+   "yomi": "ねこすな",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "猫砂（素材がベントナイトなどの鉱物系、シリカゲル など）",
+   "yomi": "ねこすな",
+   "category": "non_burnable",
+   "note": "猫のフンがついている場合は、燃やせるごみへ出してください。"
+  },
+  {
+   "name": "猫用トイレ（50cm以上）",
+   "yomi": "ねこようといれ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ネジ",
+   "yomi": "ねじ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "寝袋",
+   "yomi": "ねぶくろ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "練りわさびのチューブ",
+   "yomi": "ねりわさびのちゅーぶ",
+   "category": "plastic",
+   "note": "残り水で軽くすすいで出してください。"
+  },
+  {
+   "name": "粘土（油粘土）",
+   "yomi": "ねんど",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "粘土（紙粘土）",
+   "yomi": "ねんど",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "農機具",
+   "yomi": "のうきぐ",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "農業用ビニールマルチ類",
+   "yomi": "のうぎょうようびにーるまるちるい",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "農薬類",
+   "yomi": "のうやくるい",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "のこぎり",
+   "yomi": "のこぎり",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "海苔の容器（ガラス製）",
+   "yomi": "のりのようき",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "海苔の容器（プラスチック製）",
+   "yomi": "のりのようき",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "ノートパソコン",
+   "yomi": "のーとぱそこん",
+   "category": "small_appliance",
+   "note": "市役所本庁舎とごみ対策課庁舎のみの回収です。"
+  },
+  {
+   "name": "灰",
+   "yomi": "はい",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "廃材",
+   "yomi": "はいざい",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "灰皿",
+   "yomi": "はいざら",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "蝿帳（はいちょう）（30cm以上）",
+   "yomi": "はいちょう",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ハイベッド",
+   "yomi": "はいべっど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "廃油",
+   "yomi": "はいゆ",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "はかり",
+   "yomi": "はかり",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "白熱電球",
+   "yomi": "はくねつでんきゅう",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "羽子板",
+   "yomi": "はごいた",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "柱時計（50cm以上）",
+   "yomi": "はしらどけい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "発泡スチロール製容器・梱包材",
+   "yomi": "はっぽうすちろーるせいようき・こんぽうざい",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "花火",
+   "yomi": "はなび",
+   "category": "burnable",
+   "note": "水でしめらせてから、燃やせるごみへ出してください。"
+  },
+  {
+   "name": "ハンガー",
+   "yomi": "はんがー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ハンガーポール",
+   "yomi": "はんがーぽーる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ハンガーラック",
+   "yomi": "はんがーらっく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "はんてん",
+   "yomi": "はんてん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "バイオリン（ケース付きOK）",
+   "yomi": "ばいおりん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "バイク",
+   "yomi": "ばいく",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "バイク部品",
+   "yomi": "ばいくぶひん",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "バキュームブロア",
+   "yomi": "ばきゅーむぶろあ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "バケツ（直径50cm以上）",
+   "yomi": "ばけつ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "バケツ（直径50cm未満）",
+   "yomi": "ばけつ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "バスケットゴールセットポール込み",
+   "yomi": "ばすけっとごーるせっとぽーるこみ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "バスケットのゴール（単品）",
+   "yomi": "ばすけっとのごーる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "バスラック",
+   "yomi": "ばすらっく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "バッティングトスマシーン",
+   "yomi": "ばってぃんぐとすましーん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "バッテリー",
+   "yomi": "ばってりー",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "バット（野球用、金属製）",
+   "yomi": "ばっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "バット（野球用、木製）",
+   "yomi": "ばっと",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "絆創膏",
+   "yomi": "ばんそうこう",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "バーベキューコンロ",
+   "yomi": "ばーべきゅーこんろ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "バーベキュー用あみ",
+   "yomi": "ばーべきゅーようあみ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "パイプハンガー",
+   "yomi": "ぱいぷはんがー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "パイプベッド",
+   "yomi": "ぱいぷべっど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "パソコン",
+   "yomi": "ぱそこん",
+   "category": "not_collected",
+   "note": "パソコンはメーカーに返すことになっています。購入したメーカーへ電話してください。わからない場合は、3R推進協会（電話：03ー5282ー7685）へ電話してください。"
+  },
+  {
+   "name": "パソコン用キーボード",
+   "yomi": "ぱそこんようきーぼーど",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "パソコンラック",
+   "yomi": "ぱそこんらっく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "パター練習台（ゴルフ用）",
+   "yomi": "ぱたーれんしゅうだい",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "パラボラアンテナ",
+   "yomi": "ぱらぼらあんてな",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "パンフレット",
+   "yomi": "ぱんふれっと",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "パーテーション",
+   "yomi": "ぱーてーしょん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ひな人形（セット一式）",
+   "yomi": "ひなにんぎょう",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ひな人形（木目込み人形）",
+   "yomi": "ひなにんぎょう",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "ひな人形の台",
+   "yomi": "ひなにんぎょうのだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "火鉢（50cm以上）",
+   "yomi": "ひばち",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ビデオカメラ",
+   "yomi": "びでおかめら",
+   "category": "small_appliance",
+   "note": "又はリチウムイオン電池を外して燃やせないごみへ出してください。（外したリチウムイオン電池はリサイクル協力店あるいは小型家電回収ボックスまでお持ちください。）  リサイクル協力店検索 https：／／www．jbrc．com／general／recycle＿kensaku／"
+  },
+  {
+   "name": "ビデオテープ",
+   "yomi": "びでおてーぷ",
+   "category": "hazardous",
+   "note": "透明または半透明の袋で出してください。"
+  },
+  {
+   "name": "ビデオデッキ",
+   "yomi": "びでおでっき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ビニールシート",
+   "yomi": "びにーるしーと",
+   "category": "non_burnable",
+   "note": "たたんで、指定収集袋に入れてください。"
+  },
+  {
+   "name": "ビニールハウス（家庭用）",
+   "yomi": "びにーるはうす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "びょうぶ",
+   "yomi": "びょうぶ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "びん（飲食以外）",
+   "yomi": "びん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "びん（飲食用）",
+   "yomi": "びん",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "ビーチサンダル",
+   "yomi": "びーちさんだる",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ビーチパラソル",
+   "yomi": "びーちぱらそる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ビート板",
+   "yomi": "びーといた",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ビールケース",
+   "yomi": "びーるけーす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ピアニカ",
+   "yomi": "ぴあにか",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ピアノ",
+   "yomi": "ぴあの",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "ピンチハンガー",
+   "yomi": "ぴんちはんがー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ファクシミリ（家庭用）",
+   "yomi": "ふぁくしみり",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ファミコン",
+   "yomi": "ふぁみこん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "ファンシーケース",
+   "yomi": "ふぁんしーけーす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ファンヒーター",
+   "yomi": "ふぁんひーたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "不織布",
+   "yomi": "ふしょくふ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "腹筋台",
+   "yomi": "ふっきんだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "フットバス（湯を入れるタイプ）",
+   "yomi": "ふっとばす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "フットローラー（電動足もみ機）",
+   "yomi": "ふっとろーらー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "布団",
+   "yomi": "ふとん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "布団乾燥機",
+   "yomi": "ふとんかんそうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "布団干し",
+   "yomi": "ふとんほし",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "踏み台（30cm以上）",
+   "yomi": "ふみだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "譜面台",
+   "yomi": "ふめんだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "フライパン",
+   "yomi": "ふらいぱん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "風呂釜",
+   "yomi": "ふろかま",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "フロッピーディスク",
+   "yomi": "ふろっぴーでぃすく",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "風呂のいす（50cm以上）",
+   "yomi": "ふろのいす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "風呂のふた",
+   "yomi": "ふろのふた",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "風呂のマット（硬質）",
+   "yomi": "ふろのまっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "フードプロセッサー",
+   "yomi": "ふーどぷろせっさー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "仏壇",
+   "yomi": "ぶつだん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755（※装飾品等を取り除いた木製のもの）"
+  },
+  {
+   "name": "ブラインド",
+   "yomi": "ぶらいんど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ぶら下がり健康器",
+   "yomi": "ぶらさがりけんこうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ブランコ（一人用）",
+   "yomi": "ぶらんこ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ブレザー",
+   "yomi": "ぶれざー",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "ブロック",
+   "yomi": "ぶろっく",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "文房具（プラスチック製、ゴム製）",
+   "yomi": "ぶんぼうぐ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "プラスチックトレイ",
+   "yomi": "ぷらすちっくとれい",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "プランター（園芸用）",
+   "yomi": "ぷらんたー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "プリンター",
+   "yomi": "ぷりんたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ヘアドライヤー",
+   "yomi": "へあどらいやー",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "ヘルスメーター",
+   "yomi": "へるすめーたー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ヘルメット",
+   "yomi": "へるめっと",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ベッド",
+   "yomi": "べっど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベッドガード",
+   "yomi": "べっどがーど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベッドマット（スプリング無）",
+   "yomi": "べっどまっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベッドマット（スプリング有）",
+   "yomi": "べっどまっと",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "ベビーカー",
+   "yomi": "べびーかー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベビーガード",
+   "yomi": "べびーがーど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベビーゲート",
+   "yomi": "べびーげーと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベビータンス",
+   "yomi": "べびーたんす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベビーチェアー",
+   "yomi": "べびーちぇあー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベビーバス",
+   "yomi": "べびーばす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベビーベッド",
+   "yomi": "べびーべっど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベビーマット（スプリング無）",
+   "yomi": "べびーまっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベビーラック",
+   "yomi": "べびーらっく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベビーラック型体重計",
+   "yomi": "べびーらっくがたたいじゅうけい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベルト",
+   "yomi": "べると",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "便器",
+   "yomi": "べんき",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "便座",
+   "yomi": "べんざ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベンチ（庭用）",
+   "yomi": "べんち",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ベンチプレス",
+   "yomi": "べんちぷれす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ペット小屋（30cm以上）",
+   "yomi": "ぺっとこや",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ペットのトイレ用砂",
+   "yomi": "ぺっとのといれようすな",
+   "category": "non_burnable",
+   "note": "ペットのフンがついている場合は、燃やせるごみへ出してください。"
+  },
+  {
+   "name": "ペットボトルのふた",
+   "yomi": "ぺっとぼとるのふた",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "ペンキ",
+   "yomi": "ぺんき",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "包装紙",
+   "yomi": "ほうそうし",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "包帯",
+   "yomi": "ほうたい",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "包丁",
+   "yomi": "ほうちょう",
+   "category": "non_burnable",
+   "note": "新聞紙やボロ布で包んでキケンなどと表示して指定収集袋へ入れてください。"
+  },
+  {
+   "name": "歩行器",
+   "yomi": "ほこうき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ホットカーペット",
+   "yomi": "ほっとかーぺっと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ホットプレート（30cm以上）",
+   "yomi": "ほっとぷれーと",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ホットプレート（30cm未満）",
+   "yomi": "ほっとぷれーと",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "哺乳瓶",
+   "yomi": "ほにゅうびん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "保冷剤",
+   "yomi": "ほれいざい",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ホース（5mまで）",
+   "yomi": "ほーす",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ホース（5mを超えるもの）",
+   "yomi": "ほーす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ホースリール（ホース込み）",
+   "yomi": "ほーすりーる",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ボイラー（給油式）",
+   "yomi": "ぼいらー",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "望遠鏡（50cm以上）",
+   "yomi": "ぼうえんきょう",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "帽子",
+   "yomi": "ぼうし",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "ボディ（洋裁用人体）",
+   "yomi": "ぼでぃ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ボール（ボウリング）",
+   "yomi": "ぼーる",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "ボール（野球・サッカー・テニス・ゴルフ）",
+   "yomi": "ぼーる",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ポリタンク（20L以上）",
+   "yomi": "ぽりたんく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ポンプ（灯油を入れるためのもの）",
+   "yomi": "ぽんぷ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "マウス",
+   "yomi": "まうす",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "マウス",
+   "yomi": "まうす",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "まくら（中がそば殻、羽毛、綿）",
+   "yomi": "まくら",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "まくら（中がプラスチック、ウレタン）",
+   "yomi": "まくら",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "マグネット",
+   "yomi": "まぐねっと",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "マッチ",
+   "yomi": "まっち",
+   "category": "burnable",
+   "note": "1日水に浸してから出してください。"
+  },
+  {
+   "name": "マットレス（スプリング入り）",
+   "yomi": "まっとれす",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "マットレス（スプリングなし）",
+   "yomi": "まっとれす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "松葉づえ",
+   "yomi": "まつばづえ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "マドラー",
+   "yomi": "まどらー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "まな板（プラスチック製）",
+   "yomi": "まないた",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "まな板（木製）",
+   "yomi": "まないた",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "魔法瓶",
+   "yomi": "まほうびん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "豆電球",
+   "yomi": "まめでんきゅう",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "マヨネーズの容器",
+   "yomi": "まよねーずのようき",
+   "category": "plastic",
+   "note": "残り水で軽くすすいで出してください。"
+  },
+  {
+   "name": "万年筆",
+   "yomi": "まんねんひつ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "麻雀卓（自動式）",
+   "yomi": "まーじゃんたく",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "みかんのネット",
+   "yomi": "みかんのねっと",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "ミキサー・ジューサー",
+   "yomi": "みきさー・じゅーさー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ミシン",
+   "yomi": "みしん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "味噌の容器（プラスチック製）",
+   "yomi": "みそのようき",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "ミニカー",
+   "yomi": "みにかー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ミニコンポステレオ",
+   "yomi": "みにこんぽすてれお",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ミニスピーカー（30cm以上）",
+   "yomi": "みにすぴーかー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "虫かご（プラスチック製）",
+   "yomi": "むしかご",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "虫めがね",
+   "yomi": "むしめがね",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "無線機（30cm以上）",
+   "yomi": "むせんき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "無線機（30cm未満）",
+   "yomi": "むせんき",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "名刺",
+   "yomi": "めいし",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "メガネ",
+   "yomi": "めがね",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "メモ用紙",
+   "yomi": "めもようし",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "綿",
+   "yomi": "めん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "毛布（ウール製、アクリル製以外）",
+   "yomi": "もうふ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "毛布（ウール製、アクリル製で状態のよいもの）",
+   "yomi": "もうふ",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "餅つき器",
+   "yomi": "もちつきき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "モデム",
+   "yomi": "もでむ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "モデム",
+   "yomi": "もでむ",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "物置（幅180cm以下、奥行き90cm以下のもの）",
+   "yomi": "ものおき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755 ※解体されているものに限ります。"
+  },
+  {
+   "name": "物干し竿",
+   "yomi": "ものほしさお",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "物干し台（コンクリートは除く）",
+   "yomi": "ものほしだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "モバイルバッテリー",
+   "yomi": "もばいるばってりー",
+   "category": "hazardous",
+   "note": "小型充電式電池（リチウムイオン電池など）使用製品のうち、モバイルバッテリー、電子タバコ、電気シェーバー、電動歯ブラシの4品目を有害ごみとして収集しています。  小型充電式電池使用製品等の出し方（リチウムイオン電池など） https：／／www．city．higashikurume．lg．jp／kurashi／kankyo／shigen／gomishigen／1013815．html"
+  },
+  {
+   "name": "やかん",
+   "yomi": "やかん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "焼き鳥の串",
+   "yomi": "やきとりのくし",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "薬品のびん",
+   "yomi": "やくひんのびん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "輸液バッグ・チューブ",
+   "yomi": "ゆけつばっぐ・ちゅーぶ",
+   "category": "not_collected",
+   "note": "衛生上の観点から燃やせるごみへ出してください。"
+  },
+  {
+   "name": "輸液バッグ・チューブ",
+   "yomi": "ゆけつばっぐ・ちゅーぶ",
+   "category": "burnable",
+   "note": "衛生上の観点から燃やせるごみへ出してください。"
+  },
+  {
+   "name": "油紙",
+   "yomi": "ゆし",
+   "category": "burnable",
+   "note": "防水加工されていて水に溶けないため燃やせるごみへ出してください。"
+  },
+  {
+   "name": "温冷庫",
+   "yomi": "ゆたかひやこ",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "湯たんぽ",
+   "yomi": "ゆたんぽ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ゆりかご",
+   "yomi": "ゆりかご",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "湯沸器（瞬間湯沸器）",
+   "yomi": "ゆわかしき",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "洋裁用人体（ボディ）",
+   "yomi": "ようさいようじんたい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "洋服掛け",
+   "yomi": "ようふくかけ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "浴槽",
+   "yomi": "よくそう",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "よしず",
+   "yomi": "よしず",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ライター（使い切って）",
+   "yomi": "らいたー",
+   "category": "hazardous",
+   "note": "透明または半透明の袋で出してください。"
+  },
+  {
+   "name": "ライティングデスク",
+   "yomi": "らいてぃんぐですく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ラケット（木製以外）",
+   "yomi": "らけっと",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ラケット（木製）",
+   "yomi": "らけっと",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "ラジオ（携帯型）",
+   "yomi": "らじお",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "ラジカセ（30cm以上）",
+   "yomi": "らじかせ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ラジコン",
+   "yomi": "らじこん",
+   "category": "small_appliance",
+   "note": "又はリチウムイオン電池を外して燃やせないごみへ出してください。（外したリチウムイオン電池はリサイクル協力店あるいは小型家電回収ボックスまでお持ちください。）  リサイクル協力店検索 https：／／www．jbrc．com／general／recycle＿kensaku／"
+  },
+  {
+   "name": "ラップの芯",
+   "yomi": "らっぷのしん",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "ラップ類（調理に使用したもの）",
+   "yomi": "らっぷるい",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ラップ類（容器を包んでいたもの）",
+   "yomi": "らっぷるい",
+   "category": "plastic",
+   "note": "残り水で軽くすすいで出してください。"
+  },
+  {
+   "name": "ラティス",
+   "yomi": "らてぃす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ランドセル",
+   "yomi": "らんどせる",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ランニングマシーン",
+   "yomi": "らんにんぐましーん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "リクライニングいす",
+   "yomi": "りくらいにんぐいす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "リコーダー",
+   "yomi": "りこーだー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "リサイクルできない枝（竹、シュロ、夾竹桃、イチョウ、とげのある木）（※無料、3袋又は3束まで）",
+   "yomi": "りさいくるできないえだ",
+   "category": "burnable",
+   "note": "無料のため、透明・半透明の袋または束にして出してください。"
+  },
+  {
+   "name": "リチウムイオン電池",
+   "yomi": "りちうむいおんでんち",
+   "category": "small_appliance",
+   "note": "●使用機器から取り外せる場合は、ビニールテープなどで端子部を絶縁して、JBRC登録協力店の回収ボックスへ出してください。 ※市役所本庁舎1階、ごみ対策課にも小型充電式電池回収ボックスを設置しています。  ●使用機器から取り外せない場合は、小型家電回収ボックスに出してください。"
+  },
+  {
+   "name": "リビングボード",
+   "yomi": "りびんぐぼーど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "リモコン",
+   "yomi": "りもこん",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "両そで机",
+   "yomi": "りょうそでづくえ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "リンスの詰替用袋",
+   "yomi": "りんすのつめかえようぶくろ",
+   "category": "plastic",
+   "note": "残り水で軽くすすいで出してください。汚れが落ちないものは燃やせないごみへ出してください。"
+  },
+  {
+   "name": "リンスの容器",
+   "yomi": "りんすのようき",
+   "category": "plastic",
+   "note": "残り水で軽くすすいで出してください。汚れが落ちないものは燃やせないごみへ出してください。"
+  },
+  {
+   "name": "リール（釣り具）",
+   "yomi": "りーる",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ルアー（釣り用のゴム、金属製）",
+   "yomi": "るあー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ルーター",
+   "yomi": "るーたー",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ルーター",
+   "yomi": "るーたー",
+   "category": "small_appliance",
+   "note": ""
+  },
+  {
+   "name": "ルームランナー",
+   "yomi": "るーむらんなー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "冷却枕",
+   "yomi": "れいきゃくまくら",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "冷蔵庫",
+   "yomi": "れいぞうこ",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "冷凍庫",
+   "yomi": "れいとうこ",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "冷房機器（エアコン・クーラー）",
+   "yomi": "れいぼうきき",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "レインコート",
+   "yomi": "れいんこーと",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "レコード盤",
+   "yomi": "れこーどばん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "レコードプレーヤー",
+   "yomi": "れこーどぷれーやー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "レシート（感熱紙）",
+   "yomi": "れしーと",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "レジスター",
+   "yomi": "れじすたー",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "レジ袋",
+   "yomi": "れじぶくろ",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "レジャーシート",
+   "yomi": "れじゃーしーと",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "レジャーポット",
+   "yomi": "れじゃーぽっと",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "レトルト食品の容器",
+   "yomi": "れとるとしょくひんのようき",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "レンガ",
+   "yomi": "れんが",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "レンジ（電気・ガス）",
+   "yomi": "れんじ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "レンジ台",
+   "yomi": "れんじだい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "レンジラック",
+   "yomi": "れんじらっく",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "レンズ（ガラス製）",
+   "yomi": "れんず",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "練炭火鉢（50cm以上）",
+   "yomi": "れんたんひばち",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "レーザーディスクプレーヤー",
+   "yomi": "れーざーでぃすくぷれーやー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "老眼鏡",
+   "yomi": "ろうがんきょう",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ロウ紙",
+   "yomi": "ろうし",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "ロッカー（スチール製）",
+   "yomi": "ろっかー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ロッカータンス",
+   "yomi": "ろっかーたんす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ロッキングチェアー",
+   "yomi": "ろっきんぐちぇあー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ロックミシン",
+   "yomi": "ろっくみしん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ロディオボーイ（ジョーバ）",
+   "yomi": "ろでぃおぼーい",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ロフトベッド",
+   "yomi": "ろふとべっど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ローイングマシーン",
+   "yomi": "ろーいんぐましーん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ロースター（電気魚焼き器）",
+   "yomi": "ろーすたー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ローソク",
+   "yomi": "ろーそく",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ロープ（化学繊維）",
+   "yomi": "ろーぷ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ロープ（天然繊維）",
+   "yomi": "ろーぷ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "ローボード",
+   "yomi": "ろーぼーど",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ローラースケート",
+   "yomi": "ろーらーすけーと",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ローラーブレード",
+   "yomi": "ろーらーぶれーど",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ロールスクリーン",
+   "yomi": "ろーるすくりーん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ワイシャツ",
+   "yomi": "わいしゃつ",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "ワイシャツの台紙",
+   "yomi": "わいしゃつのだいし",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "ワインのキャップ（金属製）",
+   "yomi": "わいんのきゃっぷ",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "ワインのキャップ（コルク製）",
+   "yomi": "わいんのきゃっぷ",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "ワインびん",
+   "yomi": "わいんびん",
+   "category": "bin_can",
+   "note": ""
+  },
+  {
+   "name": "輪ゴム",
+   "yomi": "わごむ",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ワゴン",
+   "yomi": "わごん",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "和裁用裁ち板",
+   "yomi": "わさいようたちいた",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "わさびのチューブ",
+   "yomi": "わさびのちゅーぶ",
+   "category": "plastic",
+   "note": "残り水で軽くすすいで出してください。汚れが落ちないものは燃やせないごみへ出してください。"
+  },
+  {
+   "name": "和ダンス",
+   "yomi": "わだんす",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ワックス加工紙（紙コップ、紙皿など）",
+   "yomi": "わっくすかこうし",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "ワックスの缶",
+   "yomi": "わっくすのかん",
+   "category": "non_burnable",
+   "note": "中身を空にして出してください。"
+  },
+  {
+   "name": "ワッペン（紙製、布製、革製）",
+   "yomi": "わっぺん",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "ワッペン（ビニール製、プラスチック製）",
+   "yomi": "わっぺん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "和文タイプライター",
+   "yomi": "わぶんたいぷらいたー",
+   "category": "not_collected",
+   "note": "専門業者や購入先へ相談を、又は廃棄物処理業者を紹介します。"
+  },
+  {
+   "name": "割り箸",
+   "yomi": "わりばし",
+   "category": "burnable",
+   "note": ""
+  },
+  {
+   "name": "割り箸の袋（紙製）",
+   "yomi": "わりばしのふくろ",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "割り箸の袋（ビニール製）",
+   "yomi": "わりばしのふくろ",
+   "category": "plastic",
+   "note": ""
+  },
+  {
+   "name": "割れた蛍光管",
+   "yomi": "われたけいこうかん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "割れたびん",
+   "yomi": "われたびん",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "腕章（布製）",
+   "yomi": "わんしょう",
+   "category": "paper_cloth",
+   "note": ""
+  },
+  {
+   "name": "腕章（ビニール製）",
+   "yomi": "わんしょう",
+   "category": "non_burnable",
+   "note": ""
+  },
+  {
+   "name": "ワンダーコア（健康器）",
+   "yomi": "わんだーこあ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ワードプロセッサー",
+   "yomi": "わーどぷろせっさー",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  },
+  {
+   "name": "ワープロ",
+   "yomi": "わーぷろ",
+   "category": "oversized",
+   "note": "申し込み制。専用電話番号042ー473ー2118 FAX042ー477ー6755"
+  }
+ ]
 }

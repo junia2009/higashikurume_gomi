@@ -15,6 +15,15 @@
 
   function catInfo(cat) { return L.CATEGORIES[cat] || L.CATEGORIES.unknown; }
 
+  function appendLink(parent, text, href) {
+    const a = el("a", null, text);
+    a.href = href; a.target = "_blank"; a.rel = "noopener"; a.style.marginLeft = "6px";
+    parent.appendChild(a);
+  }
+
+  // 週次の固定収集日を持つ区分（早見リスト・凡例で使用）
+  const SCHEDULED = ["burnable", "non_burnable", "plastic", "pet", "bin_can", "paper_cloth", "hazardous"];
+
   function chip(cat, small) {
     const info = catInfo(cat);
     const c = el("span", "chip" + (small ? " small" : ""));
@@ -118,8 +127,7 @@
     const card = el("div", "card");
     card.appendChild(el("h2", "card-title", "区分ごとの次回収集日"));
     const list = el("div", "next-list");
-    const collectible = ["burnable", "non_burnable", "plastic", "pet", "bin", "can", "paper", "cloth", "hazardous"];
-    collectible.forEach((cat) => {
+    SCHEDULED.forEach((cat) => {
       const r = L.nextCollectionDate(cat, state.area, now, state.schedule, state.special,
         { includeFromDate: !afterCutoff });
       const row = el("div", "next-row");
@@ -176,14 +184,22 @@
 
       const info = catInfo(item.category);
       const next = el("div", "r-next");
-      if (item.category === "oversized") {
-        next.innerHTML = "粗大ごみは事前申込制です。";
-        const a = el("a", null, "受付・料金を確認");
-        a.href = "https://www.city.higashikurume.lg.jp/kurashi/kankyo/shigen/gomishigen/index.html";
-        a.target = "_blank"; a.rel = "noopener"; a.style.marginLeft = "6px";
-        next.appendChild(a);
-      } else if (item.category === "not_collected") {
-        next.textContent = "市の収集では出せません。" + (item.note || "");
+      if (info.kind === "guide") {
+        // 固定収集日を持たない区分は案内へ誘導
+        if (item.category === "oversized") {
+          next.textContent = "粗大ごみは事前申込制です。";
+          appendLink(next, "受付・料金を確認",
+            "https://www.city.higashikurume.lg.jp/kurashi/kankyo/shigen/gomishigen/index.html");
+        } else if (item.category === "pruned_branch") {
+          next.textContent = "剪定枝は事前申込制です（専用電話 042-473-2118）。";
+        } else if (item.category === "small_appliance") {
+          next.textContent = "市の小型家電回収ボックスへお持ちください。";
+          appendLink(next, "回収ボックスの場所",
+            "https://www.city.higashikurume.lg.jp/kurashi/kankyo/shigen/gomishigen/index.html");
+        } else {
+          next.textContent = "市の収集では出せません。";
+          appendLink(next, "出し方を確認", "https://www.gomisaku.jp/0069/");
+        }
       } else {
         const nc = L.nextCollectionDate(item.category, state.area, now, state.schedule, state.special,
           { includeFromDate: !afterCutoff });
@@ -256,8 +272,7 @@
 
     // 凡例
     const legend = el("div", "cal-legend");
-    ["burnable", "non_burnable", "plastic", "pet", "bin", "can", "paper", "cloth", "hazardous"]
-      .forEach((cat) => legend.appendChild(chip(cat, true)));
+    SCHEDULED.forEach((cat) => legend.appendChild(chip(cat, true)));
     host.appendChild(legend);
   }
 

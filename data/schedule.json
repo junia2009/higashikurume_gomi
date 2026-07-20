@@ -1,6 +1,6 @@
 {
   "version": "2022-02",
-  "source": "東久留米市公式サイト「収集曜日とごみ出しルールについて」(2022年2月更新)",
+  "source": "東久留米市公式サイト「収集曜日とごみ出しルールについて」(2022年2月更新) を基に、公式ごみサクの分別区分（びん・缶／紙類・布類）に合わせて資源物を同日にまとめた。びん・缶の曜日は要確認事項。",
   "areas": {
     "east": {
       "label": "東地区",
@@ -8,10 +8,10 @@
       "weekly": {
         "sun": [],
         "mon": ["plastic", "pet"],
-        "tue": ["burnable", "bin"],
+        "tue": ["burnable"],
         "wed": ["non_burnable", "hazardous"],
-        "thu": ["can", "paper", "cloth"],
-        "fri": ["burnable", "bin"],
+        "thu": ["bin_can", "paper_cloth"],
+        "fri": ["burnable"],
         "sat": []
       }
     },
@@ -20,11 +20,11 @@
       "towns": ["小山", "幸町", "前沢", "南町", "滝山", "下里", "柳窪", "野火止", "八幡町", "弥生"],
       "weekly": {
         "sun": [],
-        "mon": ["burnable", "bin"],
+        "mon": ["burnable"],
         "tue": ["plastic", "pet"],
         "wed": ["non_burnable", "hazardous"],
-        "thu": ["burnable", "bin"],
-        "fri": ["can", "paper", "cloth"],
+        "thu": ["burnable"],
+        "fri": ["bin_can", "paper_cloth"],
         "sat": []
       }
     }
