@@ -8,7 +8,7 @@
  * 注意: VERSION を変えると新しい Service Worker として認識され、install→
  *   activate で古いキャッシュが破棄される。配信内容を更新したら必ず上げること。
  */
-const VERSION = "gomi-v4";
+const VERSION = "gomi-v5";
 const APP_SHELL = [
   "./",
   "./index.html",

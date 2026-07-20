@@ -176,6 +176,15 @@ test("補完データ: 公式CSVに無い定番品目が検索でヒットする
   find("あるみかん", "can");
 });
 
+test("items.json: 備考中のURLが半角に正規化されている", () => {
+  const withUrl = items.filter((i) => /https?:\/\//i.test(i.note));
+  assert.ok(withUrl.length > 0, "URLを含む品目が無い");
+  for (const i of withUrl) {
+    // 全角のコロン・スラッシュ・ピリオドが残っていない
+    assert.ok(!/[：／．]/.test(i.note.match(/https?[:：][^\s]*/i)[0]), i.name + ": " + i.note);
+  }
+});
+
 test("補完データ: 全項目の category が enum に含まれる", () => {
   for (const e of supplement) assert.ok(L.CATEGORIES[e.category], e.name + ": " + e.category);
 });

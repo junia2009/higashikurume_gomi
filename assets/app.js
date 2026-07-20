@@ -21,6 +21,23 @@
     parent.appendChild(a);
   }
 
+  // テキスト中の URL をクリック可能なリンクにして要素を返す（テキストは textContent
+  // 経由なので安全）。
+  function noteEl(text) {
+    const div = el("div", "r-note");
+    const re = /(https?:\/\/[^\s、。）]+)/g;
+    let last = 0, m;
+    while ((m = re.exec(text)) !== null) {
+      if (m.index > last) div.appendChild(document.createTextNode(text.slice(last, m.index)));
+      const a = el("a", "note-link", m[1]);
+      a.href = m[1]; a.target = "_blank"; a.rel = "noopener";
+      div.appendChild(a);
+      last = m.index + m[1].length;
+    }
+    if (last < text.length) div.appendChild(document.createTextNode(text.slice(last)));
+    return div;
+  }
+
   // 週次の固定収集日を持つ区分（早見リスト・凡例で使用）
   const SCHEDULED = ["burnable", "non_burnable", "plastic", "pet", "bin", "can", "paper_cloth", "hazardous"];
 
@@ -185,7 +202,7 @@
       const rc = el("div", "r-cat");
       rc.appendChild(chip(item.category, true));
       r.appendChild(rc);
-      if (item.note) r.appendChild(el("div", "r-note", item.note));
+      if (item.note) r.appendChild(noteEl(item.note));
 
       const info = catInfo(item.category);
       const next = el("div", "r-next");
