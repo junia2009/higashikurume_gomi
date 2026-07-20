@@ -17,18 +17,18 @@
 
   // 区分の表示名と色（カレンダー・チップで使用）
   const CATEGORIES = {
-    burnable:      { label: "燃やせるごみ",          short: "燃やせる",   color: "#d95d4e" },
-    non_burnable:  { label: "燃やせないごみ",        short: "燃やせない", color: "#4f7fd9" },
-    plastic:       { label: "容器包装プラスチック",  short: "プラ",       color: "#d96ba8" },
-    pet:           { label: "PETボトル",             short: "PET",        color: "#2da8a0" },
-    bin:           { label: "びん",                  short: "びん",       color: "#7a52c7" },
-    can:           { label: "缶",                    short: "缶",         color: "#b0842a" },
-    paper:         { label: "紙類",                  short: "紙",         color: "#4a9e6e" },
-    cloth:         { label: "布類",                  short: "布",         color: "#8d6e63" },
-    hazardous:     { label: "有害ごみ",              short: "有害",       color: "#c7a500" },
-    oversized:     { label: "粗大ごみ",              short: "粗大",       color: "#666666" },
-    not_collected: { label: "市で収集できないもの",  short: "収集不可",   color: "#999999" },
-    unknown:       { label: "分類不明",              short: "不明",       color: "#aaaaaa" }
+    burnable:      { label: "燃やせるごみ",          short: "燃やせる",   color: "#e05a3d" },
+    non_burnable:  { label: "燃やせないごみ",        short: "燃やせない", color: "#3f72d9" },
+    plastic:       { label: "容器包装プラスチック",  short: "プラ",       color: "#d6529e" },
+    pet:           { label: "PETボトル",             short: "PET",        color: "#0ea5a5" },
+    bin:           { label: "びん",                  short: "びん",       color: "#8257d6" },
+    can:           { label: "缶",                    short: "缶",         color: "#c17d21" },
+    paper:         { label: "紙類",                  short: "紙",         color: "#2fa060" },
+    cloth:         { label: "布類",                  short: "布",         color: "#a06a52" },
+    hazardous:     { label: "有害ごみ",              short: "有害",       color: "#caa400" },
+    oversized:     { label: "粗大ごみ",              short: "粗大",       color: "#64748b" },
+    not_collected: { label: "市で収集できないもの",  short: "収集不可",   color: "#94a3b8" },
+    unknown:       { label: "分類不明",              short: "不明",       color: "#9aa0a6" }
   };
 
   /** ローカルタイムで YYYY-MM-DD */
