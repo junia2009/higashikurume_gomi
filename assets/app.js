@@ -333,8 +333,10 @@
       updateAreaSwitch();
     }
 
-    // Service Worker（オフライン対応）。新版が制御を取ったら一度だけリロードして
-    // プログラムとデータのバージョンを揃える。
+    // Service Worker（オフライン対応）。
+    // - updateViaCache:"none" で sw.js を常にサーバーの最新と照合（HTTPキャッシュを使わない）
+    // - 読み込み時とタブ復帰時に update() で更新チェックを強制
+    // - 新版が制御を取ったら一度だけ自動リロードしてバージョンを揃える
     if ("serviceWorker" in navigator) {
       let reloaded = false;
       navigator.serviceWorker.addEventListener("controllerchange", () => {
@@ -342,7 +344,14 @@
         reloaded = true;
         window.location.reload();
       });
-      navigator.serviceWorker.register("sw.js").catch(() => {});
+      navigator.serviceWorker.register("sw.js", { updateViaCache: "none" })
+        .then((reg) => {
+          reg.update();
+          document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "visible") reg.update();
+          });
+        })
+        .catch(() => {});
     }
   }
 
