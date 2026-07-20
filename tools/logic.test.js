@@ -185,6 +185,24 @@ test("items.json: 備考中のURLが半角に正規化されている", () => {
   }
 });
 
+test("items.json: 一般クレンジングが全フィールドに効いている", () => {
+  const halfKana = /[｡-ﾟ]/;          // 半角カナ
+  const fullAlnum = /[Ａ-Ｚａ-ｚ０-９]/; // 全角英数
+  const invisible = /[ --​-‍﻿]/;
+  for (const it of items) {
+    for (const v of [it.name, it.yomi, it.note]) {
+      assert.ok(!halfKana.test(v), "半角カナ残存: " + it.name + " / " + v);
+      assert.ok(!fullAlnum.test(v), "全角英数残存: " + it.name + " / " + v);
+      assert.ok(!invisible.test(v), "不可視文字残存: " + it.name);
+      assert.ok(v === v.trim(), "前後空白残存: " + it.name);
+      assert.ok(!/\s{2,}/.test(v), "連続空白残存: " + it.name + " / " + v);
+    }
+  }
+  // 電話番号の数字間の長音はハイフンに正規化されている
+  const phone = items.find((i) => /専用電話番号/.test(i.note));
+  assert.ok(phone && /042-473-2118/.test(phone.note), "電話番号が半角ハイフン化されていない");
+});
+
 test("補完データ: 全項目の category が enum に含まれる", () => {
   for (const e of supplement) assert.ok(L.CATEGORIES[e.category], e.name + ": " + e.category);
 });
