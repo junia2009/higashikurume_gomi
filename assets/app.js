@@ -333,8 +333,15 @@
       updateAreaSwitch();
     }
 
-    // Service Worker（Phase 2・存在すれば登録）
+    // Service Worker（オフライン対応）。新版が制御を取ったら一度だけリロードして
+    // プログラムとデータのバージョンを揃える。
     if ("serviceWorker" in navigator) {
+      let reloaded = false;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (reloaded) return;
+        reloaded = true;
+        window.location.reload();
+      });
       navigator.serviceWorker.register("sw.js").catch(() => {});
     }
   }
