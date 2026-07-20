@@ -22,7 +22,7 @@
   }
 
   // 週次の固定収集日を持つ区分（早見リスト・凡例で使用）
-  const SCHEDULED = ["burnable", "non_burnable", "plastic", "pet", "bin_can", "paper_cloth", "hazardous"];
+  const SCHEDULED = ["burnable", "non_burnable", "plastic", "pet", "bin", "can", "paper_cloth", "hazardous"];
 
   function chip(cat, small) {
     const info = catInfo(cat);

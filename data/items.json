@@ -66,13 +66,13 @@
   {
    "name": "空き缶",
    "yomi": "あきかん",
-   "category": "bin_can",
+   "category": "can",
    "note": ""
   },
   {
    "name": "空きびん",
    "yomi": "あきびん",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
@@ -174,13 +174,13 @@
   {
    "name": "油の容器（缶製）",
    "yomi": "あぶらのようき",
-   "category": "bin_can",
+   "category": "can",
    "note": "きれいに洗うか拭き取ってください。"
   },
   {
    "name": "油の容器（びん製）",
    "yomi": "あぶらのようき",
-   "category": "bin_can",
+   "category": "bin",
    "note": "きれいに洗うか拭き取ってください。"
   },
   {
@@ -426,7 +426,7 @@
   {
    "name": "一升瓶",
    "yomi": "いっしょうびん",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
@@ -588,7 +588,7 @@
   {
    "name": "ウイスキーのびん",
    "yomi": "ういすきーのびん",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
@@ -750,7 +750,7 @@
   {
    "name": "栄養ドリンクのびん",
    "yomi": "えいようどりんくのびん",
-   "category": "bin_can",
+   "category": "bin",
    "note": "キャップ・ふたは、金属製なら缶、プラスチック製なら容器包装プラスチック、それ以外は燃やせないごみへ出してください。"
   },
   {
@@ -912,7 +912,7 @@
   {
    "name": "オイルの容器（びん製）",
    "yomi": "おいるのようき",
-   "category": "bin_can",
+   "category": "bin",
    "note": "きれいに洗うか拭き取ってください。"
   },
   {
@@ -948,7 +948,7 @@
   {
    "name": "お菓子の缶",
    "yomi": "おかしのかん",
-   "category": "bin_can",
+   "category": "can",
    "note": ""
   },
   {
@@ -1446,7 +1446,7 @@
   {
    "name": "カップ酒のびん",
    "yomi": "かっぷざけのびん",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
@@ -1644,7 +1644,7 @@
   {
    "name": "缶（飲食用）",
    "yomi": "かん",
-   "category": "bin_can",
+   "category": "can",
    "note": ""
   },
   {
@@ -2058,7 +2058,7 @@
   {
    "name": "牛乳びん",
    "yomi": "ぎゅうにゅうびん",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
@@ -2346,7 +2346,7 @@
   {
    "name": "ケチャップの容器（びん）",
    "yomi": "けちゃっぷのようき",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
@@ -2658,7 +2658,7 @@
   {
    "name": "酒カップ",
    "yomi": "さけかっぷ",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
@@ -2694,7 +2694,7 @@
   {
    "name": "サラダ油の容器（缶製）",
    "yomi": "さらだあぶらのようき",
-   "category": "bin_can",
+   "category": "can",
    "note": "きれいに洗うか拭き取ってください。"
   },
   {
@@ -2982,7 +2982,7 @@
   {
    "name": "しょうゆの容器（びん製）",
    "yomi": "しょうゆのようき",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
@@ -3270,13 +3270,13 @@
   {
    "name": "ジュースの容器（缶製）",
    "yomi": "じゅーすのようき",
-   "category": "bin_can",
+   "category": "can",
    "note": ""
   },
   {
    "name": "ジュースの容器（びん製）",
    "yomi": "じゅーすのようき",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
@@ -3534,7 +3534,7 @@
   {
    "name": "スチール缶",
    "yomi": "すちーるかん",
-   "category": "bin_can",
+   "category": "can",
    "note": ""
   },
   {
@@ -3768,7 +3768,7 @@
   {
    "name": "清涼飲料水の容器（びん製）",
    "yomi": "せいりょういんりょうすいのようき",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
@@ -3972,7 +3972,7 @@
   {
    "name": "ソースの容器（びん製）",
    "yomi": "そーすのようき",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
@@ -4230,13 +4230,13 @@
   {
    "name": "調味料の容器（缶製）",
    "yomi": "ちょうみりょうのようき",
-   "category": "bin_can",
+   "category": "can",
    "note": ""
   },
   {
    "name": "調味料の容器（びん製）",
    "yomi": "ちょうみりょうのようき",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
@@ -4758,7 +4758,7 @@
   {
    "name": "ドレッシングの容器（びん製）",
    "yomi": "どれっしんぐのようき",
-   "category": "bin_can",
+   "category": "bin",
    "note": "残り水で軽くすすいで出してください。"
   },
   {
@@ -4956,7 +4956,7 @@
   {
    "name": "海苔の容器（ガラス製）",
    "yomi": "のりのようき",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
@@ -5286,7 +5286,7 @@
   {
    "name": "びん（飲食用）",
    "yomi": "びん",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
@@ -6516,7 +6516,7 @@
   {
    "name": "ワインのキャップ（金属製）",
    "yomi": "わいんのきゃっぷ",
-   "category": "bin_can",
+   "category": "can",
    "note": ""
   },
   {
@@ -6528,7 +6528,7 @@
   {
    "name": "ワインびん",
    "yomi": "わいんびん",
-   "category": "bin_can",
+   "category": "bin",
    "note": ""
   },
   {
