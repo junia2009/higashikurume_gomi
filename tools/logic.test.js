@@ -24,11 +24,17 @@ test("normalize: カタカナ・長音・空白・全角を同一視", () => {
 });
 
 test("searchItems: 読みでもカタカナでも見つかる", () => {
+  // ペットボトル系（品目名は「飲料容器（ペットボトル）」等）は pet に分類される
   const r1 = L.searchItems(items, "ぺっとぼとる");
-  assert.ok(r1.some((i) => i.name === "ペットボトル"));
-  const r2 = L.searchItems(items, "ダンボ");
-  assert.ok(r2.some((i) => i.name === "段ボール"));
+  assert.ok(r1.length > 0);
+  assert.ok(r1.some((i) => i.category === "pet"));
+  // カタカナ入力でも同じ結果
+  assert.deepStrictEqual(
+    L.searchItems(items, "ペットボトル").map((i) => i.name),
+    r1.map((i) => i.name)
+  );
   const r3 = L.searchItems(items, "テレビ");
+  assert.strictEqual(r3[0].name, "テレビ");
   assert.strictEqual(r3[0].category, "not_collected");
 });
 
@@ -44,7 +50,14 @@ test("searchItems: 空クエリは空配列", () => {
 test("categoriesOn: 東地区の月曜はプラ+PET、西地区は燃やせる+びん", () => {
   const mon = new Date(2026, 6, 27); // 2026-07-27 (月)
   assert.deepStrictEqual(L.categoriesOn(mon, "east", schedule, special).categories, ["plastic", "pet"]);
-  assert.deepStrictEqual(L.categoriesOn(mon, "west", schedule, special).categories, ["burnable", "bin"]);
+  assert.deepStrictEqual(L.categoriesOn(mon, "west", schedule, special).categories, ["burnable"]);
+});
+
+test("categoriesOn: 資源物(びん・缶/紙・布)は東=木・西=金にまとまる", () => {
+  const thu = new Date(2026, 6, 23); // 2026-07-23 (木)
+  const fri = new Date(2026, 6, 24); // 2026-07-24 (金)
+  assert.deepStrictEqual(L.categoriesOn(thu, "east", schedule, special).categories, ["bin_can", "paper_cloth"]);
+  assert.deepStrictEqual(L.categoriesOn(fri, "west", schedule, special).categories, ["bin_can", "paper_cloth"]);
 });
 
 test("categoriesOn: 土日は収集なし", () => {
@@ -83,8 +96,8 @@ test("nextCollectionDate: 土日をまたいで翌週へ", () => {
 });
 
 test("nextCollectionDate: 年末年始の収集なし日をスキップ", () => {
-  // 2026-12-31(木) は東地区 can の日だが no_collection → 次の木曜 2027-01-07
-  const r = L.nextCollectionDate("can", "east", new Date(2026, 11, 30), schedule, special, { includeFromDate: false });
+  // 2026-12-31(木) は東地区 bin_can の日だが no_collection → 次の木曜 2027-01-07
+  const r = L.nextCollectionDate("bin_can", "east", new Date(2026, 11, 30), schedule, special, { includeFromDate: false });
   assert.strictEqual(r.iso, "2027-01-07");
 });
 
@@ -107,10 +120,28 @@ test("areaForTown: 南沢は東地区、前沢は西地区", () => {
   assert.strictEqual(L.areaForTown("存在しない町", schedule), null);
 });
 
-test("items.json: 全品目の category が enum に含まれる", () => {
+test("items.json: 全品目の category が enum に含まれる（unknown なし）", () => {
   for (const item of items) {
     assert.ok(L.CATEGORIES[item.category], item.name + ": " + item.category);
+    assert.notStrictEqual(item.category, "unknown", item.name);
   }
+});
+
+test("items.json: 公式ごみサク全品目が取り込まれている", () => {
+  assert.ok(items.length >= 1000, "品目数が少なすぎる: " + items.length);
+  // 代表的な読みで検索して、期待する区分の品目が含まれる
+  const hasCat = (q, cat) => {
+    const r = L.searchItems(items, q);
+    assert.ok(r.length > 0, q + " が0件");
+    assert.ok(r.some((i) => i.category === cat), q + " に区分 " + cat + " が無い");
+  };
+  hasCat("ぺっとぼとる", "pet");
+  hasCat("かんでんち", "hazardous");
+  hasCat("そうじき", "oversized");
+  // guide 区分（収集日を持たない）も存在する
+  assert.ok(items.some((i) => i.category === "oversized"));
+  assert.ok(items.some((i) => i.category === "not_collected"));
+  assert.ok(items.some((i) => i.category === "small_appliance"));
 });
 
 test("schedule.json: 曜日キーと category が正しい", () => {

@@ -16,19 +16,21 @@
   const WEEKDAY_JA = ["日", "月", "火", "水", "木", "金", "土"];
 
   // 区分の表示名と色（カレンダー・チップで使用）
+  // 区分は東久留米市 公式ごみサク（東京都オープンデータ）の分別区分に準拠。
+  // scheduled: 週次の固定収集日がある区分。guide: 収集日ではなく案内へ誘導する区分。
   const CATEGORIES = {
-    burnable:      { label: "燃やせるごみ",          short: "燃やせる",   color: "#e05a3d" },
-    non_burnable:  { label: "燃やせないごみ",        short: "燃やせない", color: "#3f72d9" },
-    plastic:       { label: "容器包装プラスチック",  short: "プラ",       color: "#d6529e" },
-    pet:           { label: "PETボトル",             short: "PET",        color: "#0ea5a5" },
-    bin:           { label: "びん",                  short: "びん",       color: "#8257d6" },
-    can:           { label: "缶",                    short: "缶",         color: "#c17d21" },
-    paper:         { label: "紙類",                  short: "紙",         color: "#2fa060" },
-    cloth:         { label: "布類",                  short: "布",         color: "#a06a52" },
-    hazardous:     { label: "有害ごみ",              short: "有害",       color: "#caa400" },
-    oversized:     { label: "粗大ごみ",              short: "粗大",       color: "#64748b" },
-    not_collected: { label: "市で収集できないもの",  short: "収集不可",   color: "#94a3b8" },
-    unknown:       { label: "分類不明",              short: "不明",       color: "#9aa0a6" }
+    burnable:        { label: "燃やせるごみ",         short: "燃やせる",   color: "#e0533d", kind: "scheduled" },
+    non_burnable:    { label: "燃やせないごみ",       short: "燃やせない", color: "#3f6fd6", kind: "scheduled" },
+    plastic:         { label: "容器包装プラスチック", short: "プラ",       color: "#d44f9a", kind: "scheduled" },
+    pet:             { label: "ペットボトル",         short: "PET",        color: "#0ea3a0", kind: "scheduled" },
+    bin_can:         { label: "びん・缶",             short: "びん缶",     color: "#c58a2a", kind: "scheduled" },
+    paper_cloth:     { label: "紙類・布類",           short: "紙布",       color: "#2f9e5e", kind: "scheduled" },
+    hazardous:       { label: "有害ごみ",             short: "有害",       color: "#9c8b12", kind: "scheduled" },
+    small_appliance: { label: "小型家電回収ボックス", short: "小型家電",   color: "#5f7d99", kind: "guide" },
+    pruned_branch:   { label: "剪定枝",               short: "剪定枝",     color: "#7d9440", kind: "guide" },
+    oversized:       { label: "粗大ごみ",             short: "粗大",       color: "#6b7280", kind: "guide" },
+    not_collected:   { label: "市では収集しません",   short: "収集不可",   color: "#97a2af", kind: "guide" },
+    unknown:         { label: "分類不明",             short: "不明",       color: "#9aa0a6", kind: "guide" }
   };
 
   /** ローカルタイムで YYYY-MM-DD */
