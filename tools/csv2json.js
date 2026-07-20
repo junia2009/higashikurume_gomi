@@ -49,12 +49,13 @@ function parseCSV(text) {
 }
 
 // 分別区分（列の値）→ category enum。実CSVで確認した全11種を網羅。
+// 「びん・缶」は公式では1区分だが収集日が異なる（びん=燃やせると同日／
+// 缶=紙布と同日）ため、品目名から bin / can へ振り分ける（splitBinCan 参照）。
 const CATEGORY_EXACT = {
   "燃やせるごみ": "burnable",
   "燃やせないごみ": "non_burnable",
   "容器包装プラスチック": "plastic",
   "ペットボトル": "pet",
-  "びん・缶": "bin_can",
   "紙類・布類": "paper_cloth",
   "有害ごみ": "hazardous",
   "小型家電回収ボックス": "small_appliance",
@@ -63,6 +64,14 @@ const CATEGORY_EXACT = {
   "収集しません": "not_collected"
 };
 
+// 「びん・缶」区分の品目名から bin / can を判定
+function splitBinCan(name) {
+  if (/缶/.test(name)) return "can";
+  if (/金属/.test(name)) return "can";      // ワインのキャップ（金属製）など
+  if (/びん|瓶|ガラス/.test(name)) return "bin";
+  return "bin";                              // 酒カップ等のガラス容器は bin 扱い
+}
+
 // 表記揺れ用のフォールバック（将来の版で区分名が変わった場合の保険）
 const CATEGORY_FUZZY = [
   [/容器包装|プラスチック製容器|プラ容器|容リ/, "plastic"],
@@ -70,7 +79,8 @@ const CATEGORY_FUZZY = [
   [/燃やせない|燃えない|不燃/, "non_burnable"],
   [/燃やせる|燃える|可燃/, "burnable"],
   [/有害/, "hazardous"],
-  [/びん|ビン|瓶|缶|かん|カン/, "bin_can"],
+  [/缶|かん|カン/, "can"],
+  [/びん|ビン|瓶|ガラス/, "bin"],
   [/紙|布/, "paper_cloth"],
   [/小型家電/, "small_appliance"],
   [/剪定|枝/, "pruned_branch"],
@@ -78,8 +88,9 @@ const CATEGORY_FUZZY = [
   [/収集しません|収集できない|収集不可|処理できない|適正処理困難|家電リサイクル/, "not_collected"]
 ];
 
-function toCategory(raw) {
+function toCategory(raw, name) {
   const s = (raw || "").trim();
+  if (s === "びん・缶") return splitBinCan(name || "");
   if (CATEGORY_EXACT[s]) return CATEGORY_EXACT[s];
   for (const [re, cat] of CATEGORY_FUZZY) if (re.test(s)) return cat;
   return "unknown";
@@ -125,7 +136,7 @@ function main() {
   for (const r of rows.slice(1)) {
     const name = (r[cName] || "").trim();
     if (!name) continue;
-    const category = toCategory(r[cCat]);
+    const category = toCategory(r[cCat], name);
     if (category === "unknown") unknown.push(name + " (" + (r[cCat] || "").trim() + ")");
     // 注意点・備考の順で結合（実データでは備考のみ入る）
     const note = [cChui !== -1 ? r[cChui] : "", cBiko !== -1 ? r[cBiko] : ""]

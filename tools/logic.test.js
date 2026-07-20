@@ -50,14 +50,16 @@ test("searchItems: 空クエリは空配列", () => {
 test("categoriesOn: 東地区の月曜はプラ+PET、西地区は燃やせる+びん", () => {
   const mon = new Date(2026, 6, 27); // 2026-07-27 (月)
   assert.deepStrictEqual(L.categoriesOn(mon, "east", schedule, special).categories, ["plastic", "pet"]);
-  assert.deepStrictEqual(L.categoriesOn(mon, "west", schedule, special).categories, ["burnable"]);
+  assert.deepStrictEqual(L.categoriesOn(mon, "west", schedule, special).categories, ["burnable", "bin"]);
 });
 
-test("categoriesOn: 資源物(びん・缶/紙・布)は東=木・西=金にまとまる", () => {
-  const thu = new Date(2026, 6, 23); // 2026-07-23 (木)
-  const fri = new Date(2026, 6, 24); // 2026-07-24 (金)
-  assert.deepStrictEqual(L.categoriesOn(thu, "east", schedule, special).categories, ["bin_can", "paper_cloth"]);
-  assert.deepStrictEqual(L.categoriesOn(fri, "west", schedule, special).categories, ["bin_can", "paper_cloth"]);
+test("categoriesOn: びんは燃やせると同日・缶は紙布と同日", () => {
+  // 2026-07-21(火) 東: 燃やせる・びん
+  assert.deepStrictEqual(L.categoriesOn(new Date(2026, 6, 21), "east", schedule, special).categories, ["burnable", "bin"]);
+  // 2026-07-23(木) 東: 缶・紙布
+  assert.deepStrictEqual(L.categoriesOn(new Date(2026, 6, 23), "east", schedule, special).categories, ["can", "paper_cloth"]);
+  // 2026-07-24(金) 西: 缶・紙布
+  assert.deepStrictEqual(L.categoriesOn(new Date(2026, 6, 24), "west", schedule, special).categories, ["can", "paper_cloth"]);
 });
 
 test("categoriesOn: 土日は収集なし", () => {
@@ -96,9 +98,15 @@ test("nextCollectionDate: 土日をまたいで翌週へ", () => {
 });
 
 test("nextCollectionDate: 年末年始の収集なし日をスキップ", () => {
-  // 2026-12-31(木) は東地区 bin_can の日だが no_collection → 次の木曜 2027-01-07
-  const r = L.nextCollectionDate("bin_can", "east", new Date(2026, 11, 30), schedule, special, { includeFromDate: false });
+  // 2026-12-31(木) は東地区 can の日だが no_collection → 次の木曜 2027-01-07
+  const r = L.nextCollectionDate("can", "east", new Date(2026, 11, 30), schedule, special, { includeFromDate: false });
   assert.strictEqual(r.iso, "2027-01-07");
+});
+
+test("nextCollectionDate: びんは火・金(東)で拾える", () => {
+  // 2026-07-20(月) 起点 → 東地区 bin は火曜 21日
+  const r = L.nextCollectionDate("bin", "east", new Date(2026, 6, 20), schedule, special, { includeFromDate: false });
+  assert.strictEqual(r.iso, "2026-07-21");
 });
 
 test("nextCollectionDate: 祝日に当たると holiday フラグ", () => {
