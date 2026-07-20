@@ -1,8 +1,14 @@
-/* 東久留米ごみナビ Service Worker（Phase 2 オフライン対応）
- * アプリシェルとデータJSONをキャッシュ。データは network-first（更新を拾いつつ
- * オフライン時はキャッシュへフォールバック）、静的アセットは cache-first。
+/* 東久留米ごみナビ Service Worker（オフライン対応）
+ *
+ * 方針: 同一オリジンの GET はすべて network-first。
+ *   オンライン時は必ず最新を取得してキャッシュを更新し、オフライン時のみ
+ *   キャッシュへフォールバックする。これにより、プログラム（HTML/JS/CSS）と
+ *   データ（JSON）のバージョンがズレて壊れる問題を防ぐ。
+ *
+ * 注意: VERSION を変えると新しい Service Worker として認識され、install→
+ *   activate で古いキャッシュが破棄される。配信内容を更新したら必ず上げること。
  */
-const VERSION = "gomi-v1";
+const VERSION = "gomi-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -18,7 +24,10 @@ const APP_SHELL = [
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(VERSION).then((cache) => cache.addAll(APP_SHELL)).then(() => self.skipWaiting())
+    caches.open(VERSION)
+      // 事前キャッシュ（失敗しても install は継続）
+      .then((cache) => Promise.allSettled(APP_SHELL.map((u) => cache.add(u))))
+      .then(() => self.skipWaiting())
   );
 });
 
@@ -36,29 +45,14 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
 
-  const isData = url.pathname.includes("/data/");
-  if (isData) {
-    // network-first
-    event.respondWith(
-      fetch(req)
-        .then((res) => {
-          const copy = res.clone();
-          caches.open(VERSION).then((c) => c.put(req, copy));
-          return res;
-        })
-        .catch(() => caches.match(req))
-    );
-  } else {
-    // cache-first
-    event.respondWith(
-      caches.match(req).then((cached) =>
-        cached ||
-        fetch(req).then((res) => {
-          const copy = res.clone();
-          caches.open(VERSION).then((c) => c.put(req, copy));
-          return res;
-        })
-      )
-    );
-  }
+  // network-first: オンラインなら最新を返しつつキャッシュ更新、失敗時はキャッシュ
+  event.respondWith(
+    fetch(req)
+      .then((res) => {
+        const copy = res.clone();
+        caches.open(VERSION).then((c) => c.put(req, copy)).catch(() => {});
+        return res;
+      })
+      .catch(() => caches.match(req).then((cached) => cached || caches.match("./index.html")))
+  );
 });
