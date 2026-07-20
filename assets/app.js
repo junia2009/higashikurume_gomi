@@ -36,12 +36,17 @@
 
   // ---- データ読み込み ----
   async function load() {
-    const [items, schedule, special] = await Promise.all([
+    const [items, supplement, schedule, special] = await Promise.all([
       fetch("data/items.json").then((r) => r.json()),
+      fetch("data/items_supplement.json").then((r) => r.json()).catch(() => ({ items: [] })),
       fetch("data/schedule.json").then((r) => r.json()),
       fetch("data/special_days.json").then((r) => r.json()).catch(() => ({}))
     ]);
-    state.items = items.items || [];
+    const base = items.items || [];
+    // 補完データは公式CSVに無い定番品目のみ。既存と同名（正規化一致）のものは足さない。
+    const have = new Set(base.map((b) => L.normalize(b.name)));
+    const extra = (supplement.items || []).filter((e) => !have.has(L.normalize(e.name)));
+    state.items = base.concat(extra);
     state.itemsMeta = items;
     state.schedule = schedule;
     state.special = special || {};

@@ -1,0 +1,14 @@
+{
+  "source": "公式オープンデータCSV(2023-06版)に品目として欠けている定番品目の補完。ごみサク現行サイトには存在するが配布CSVに含まれないもの、および検索語と品目名が一致しない定番品目の別名を、既存データと同じ区分基準で手当てする。items.json に同名品目があれば読み込み時にそちらを優先（重複は無視）。",
+  "items": [
+    { "name": "段ボール", "yomi": "だんぼーる", "category": "paper_cloth", "note": "たたんでひもで縛る。紙類の日に出す" },
+    { "name": "段ボール箱", "yomi": "だんぼーるばこ", "category": "paper_cloth", "note": "たたんでひもで縛る" },
+    { "name": "新聞", "yomi": "しんぶん", "category": "paper_cloth", "note": "ひもで縛る。雨天でも回収" },
+    { "name": "新聞紙", "yomi": "しんぶんし", "category": "paper_cloth", "note": "ひもで縛る。雨天でも回収" },
+    { "name": "チラシ", "yomi": "ちらし", "category": "paper_cloth", "note": "新聞と一緒にひもで縛る" },
+    { "name": "封筒", "yomi": "ふうとう", "category": "paper_cloth", "note": "雑がみへ。窓付きはビニールの窓を外す" },
+    { "name": "コピー用紙", "yomi": "こぴーようし", "category": "paper_cloth", "note": "OA用紙・雑がみとして出す" },
+    { "name": "アルミ缶", "yomi": "あるみかん", "category": "can", "note": "中を軽くすすいで出す" },
+    { "name": "蛍光灯", "yomi": "けいこうとう", "category": "hazardous", "note": "割れないよう箱や購入時のケースに入れて出す（蛍光管）" }
+  ]
+}
