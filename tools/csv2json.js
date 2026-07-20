@@ -100,9 +100,23 @@ function katakanaToHiragana(s) {
   return s.normalize("NFKC").replace(/[ァ-ヶ]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0x60));
 }
 
-// カナ表記のゆらぎを吸収（半角ハイフンで書かれた電話番号などはそのまま）
+// 全角ASCII・全角スペースを半角へ
+function toHalfWidth(s) {
+  return s
+    .replace(/[！-～]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xfee0))
+    .replace(/　/g, " ");
+}
+
+// 備考の整形。URLトークンだけ半角化する（日本語の全角括弧等はそのまま残す）。
 function cleanNote(s) {
-  return (s || "").trim().replace(/ー{2,}/g, "ー");
+  const t = (s || "").trim().replace(/ー{2,}/g, "ー");
+  return t
+    .split(/(\s+)/)
+    .map((tok) => {
+      const half = toHalfWidth(tok);
+      return /^https?:\/\//i.test(half) ? half : tok;
+    })
+    .join("");
 }
 
 function col(header, name) {

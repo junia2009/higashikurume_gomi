@@ -280,6 +280,7 @@ section.view.active { display: block; }
 .result .r-name { font-weight: 800; font-size: 1.08rem; }
 .result .r-cat { margin: 8px 0; }
 .result .r-note { color: var(--muted); font-size: .88rem; }
+.result .r-note .note-link { color: var(--accent-ink); font-weight: 600; word-break: break-all; }
 .result .r-next {
   margin-top: 12px; padding-top: 11px;
   border-top: 1px solid var(--line);
