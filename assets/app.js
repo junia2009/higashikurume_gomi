@@ -301,8 +301,9 @@
   // ---- ルール・情報 ----
   function renderInfo() {
     const meta = state.itemsMeta || {};
-    $("#itemsVersion").textContent = (meta.seed ? "暫定シード" : meta.version || "-")
-      + "（" + (state.items.length) + "品目）";
+    const vintage = meta.seed ? "暫定シード" : (meta.source_date || meta.version || "-") + "版";
+    $("#itemsVersion").textContent = vintage + "（" + state.items.length + "品目）"
+      + (meta.generated ? " ／ 取得: " + meta.generated : "");
   }
 
   function renderAll() {
