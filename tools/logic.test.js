@@ -7,6 +7,13 @@ const fs = require("node:fs");
 const L = require("../assets/logic.js");
 const schedule = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/schedule.json"), "utf8"));
 const items = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/items.json"), "utf8")).items;
+const supplement = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/items_supplement.json"), "utf8")).items;
+
+// app.js の load() と同じマージ規則（既存と同名は足さない）
+function merged() {
+  const have = new Set(items.map((b) => L.normalize(b.name)));
+  return items.concat(supplement.filter((e) => !have.has(L.normalize(e.name))));
+}
 
 const special = {
   no_collection: ["2026-12-31", "2027-01-01", "2027-01-02", "2027-01-03"],
@@ -150,6 +157,38 @@ test("items.json: 公式ごみサク全品目が取り込まれている", () =>
   assert.ok(items.some((i) => i.category === "oversized"));
   assert.ok(items.some((i) => i.category === "not_collected"));
   assert.ok(items.some((i) => i.category === "small_appliance"));
+});
+
+test("補完データ: 公式CSVに無い定番品目が検索でヒットする", () => {
+  const all = merged();
+  const find = (q, cat) => {
+    const r = L.searchItems(all, q);
+    assert.ok(r.length > 0, q + " が0件");
+    assert.ok(r.some((i) => i.category === cat), q + " に区分 " + cat + " が無い");
+  };
+  // CSVに完全に無い定番
+  find("だんぼーる", "paper_cloth");
+  find("しんぶん", "paper_cloth");
+  find("ふうとう", "paper_cloth");
+  // 別名しか無い定番（検索語と一致させる）
+  find("こぴーようし", "paper_cloth");
+  find("けいこうとう", "hazardous");
+  find("あるみかん", "can");
+});
+
+test("補完データ: 全項目の category が enum に含まれる", () => {
+  for (const e of supplement) assert.ok(L.CATEGORIES[e.category], e.name + ": " + e.category);
+});
+
+test("補完データ: 既存と重複する名前はマージで足されない", () => {
+  const have = new Set(items.map((b) => L.normalize(b.name)));
+  const added = supplement.filter((e) => !have.has(L.normalize(e.name)));
+  // マージで実際に足された補完項目には、base と正規化一致するものが無い
+  for (const e of added) {
+    assert.ok(!have.has(L.normalize(e.name)), e.name + " は base と重複");
+  }
+  // マージ後の件数 = base件数 + 実際に足された補完件数
+  assert.strictEqual(merged().length, items.length + added.length);
 });
 
 test("schedule.json: 曜日キーと category が正しい", () => {
