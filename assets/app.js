@@ -18,8 +18,8 @@
   function chip(cat, small) {
     const info = catInfo(cat);
     const c = el("span", "chip" + (small ? " small" : ""));
+    c.style.setProperty("--c", info.color);
     const dot = el("span", "dot");
-    dot.style.background = info.color;
     c.appendChild(dot);
     c.appendChild(document.createTextNode(small ? info.short : info.label));
     return c;
@@ -51,7 +51,7 @@
   }
   function updateAreaSwitch() {
     const label = state.schedule.areas[state.area].label;
-    $("#areaSwitch").innerHTML = "地区 <b>" + label + "</b> 切替";
+    $("#areaSwitch").innerHTML = "<b>" + label + "</b>";
   }
 
   function showAreaModal(canDismiss) {
@@ -62,8 +62,10 @@
     for (const key of Object.keys(state.schedule.areas)) {
       const area = state.schedule.areas[key];
       const b = el("button", "area-opt");
-      b.appendChild(el("b", null, area.label));
-      b.appendChild(el("span", null, area.towns.join("・")));
+      const body = el("div", "opt-body");
+      body.appendChild(el("b", null, area.label));
+      body.appendChild(el("span", null, area.towns.join("・")));
+      b.appendChild(body);
       b.addEventListener("click", () => { document.body.removeChild(back); setArea(key); });
       m.appendChild(b);
     }
@@ -85,24 +87,23 @@
     [0, 1].forEach((offset) => {
       const date = L.addDays(today, offset);
       const info = L.categoriesOn(date, state.area, state.schedule, state.special);
-      const card = el("div", "card");
-      card.appendChild(el("h2", null, offset === 0 ? "今日出せるごみ" : "明日出せるごみ"));
-      const dh = el("div", "day-date");
-      dh.appendChild(document.createTextNode(L.formatDateJa(date)));
-      dh.appendChild(el("span", "rel", L.relativeLabel(offset)));
-      card.appendChild(dh);
+      const card = el("div", "hero " + (offset === 0 ? "hero-today" : "hero-tomorrow"));
+      const head = el("div", "hero-head");
+      head.appendChild(el("span", "hero-rel", offset === 0 ? "今日" : "明日"));
+      head.appendChild(el("span", "hero-date", L.formatDateJa(date)));
+      card.appendChild(head);
 
       if (info.noCollection) {
-        card.appendChild(el("div", "none", "収集はありません（年末年始など）"));
+        card.appendChild(el("div", "none", "🎍 収集はお休みです（年末年始など）"));
       } else if (info.categories.length === 0) {
-        card.appendChild(el("div", "none", "収集はありません"));
+        card.appendChild(el("div", "none", "この日の収集はありません"));
       } else {
         const chips = el("div", "chips");
         info.categories.forEach((c) => chips.appendChild(chip(c)));
         card.appendChild(chips);
       }
       if (offset === 0 && afterCutoff && info.categories.length > 0) {
-        card.appendChild(el("div", "badge done", "朝8:30を過ぎています（収集済みの可能性）"));
+        card.appendChild(el("div", "badge done", "朝8:30を過ぎています（収集済みかも）"));
       }
       if (info.holiday) {
         card.appendChild(el("div", "badge warn", "祝日: 収集の有無は広報ひがしくるめで要確認"));
@@ -115,26 +116,27 @@
 
     // 各区分の次回収集日 早見
     const card = el("div", "card");
-    card.appendChild(el("h2", null, "区分ごとの次回収集日"));
+    card.appendChild(el("h2", "card-title", "区分ごとの次回収集日"));
+    const list = el("div", "next-list");
     const collectible = ["burnable", "non_burnable", "plastic", "pet", "bin", "can", "paper", "cloth", "hazardous"];
     collectible.forEach((cat) => {
       const r = L.nextCollectionDate(cat, state.area, now, state.schedule, state.special,
         { includeFromDate: !afterCutoff });
-      const line = el("div", "r-next");
-      line.style.borderTop = "none";
-      line.style.paddingTop = "2px";
-      line.appendChild(chip(cat, true));
-      const span = el("span");
-      span.style.marginLeft = "8px";
+      const row = el("div", "next-row");
+      row.appendChild(chip(cat, true));
+      const right = el("span", "next-when");
       if (r) {
-        span.innerHTML = "<b>" + L.formatDateJa(r.date) + "</b>（" + L.relativeLabel(r.daysFromNow) + "）"
-          + (r.holiday ? " ⚠祝日" : "");
+        const soon = r.daysFromNow <= 1 ? " soon" : "";
+        right.innerHTML = '<b class="next-date">' + L.formatDateJa(r.date) + "</b>"
+          + '<span class="next-rel' + soon + '">' + L.relativeLabel(r.daysFromNow) + "</span>"
+          + (r.holiday ? '<span class="next-holiday">祝日要確認</span>' : "");
       } else {
-        span.textContent = "—";
+        right.textContent = "—";
       }
-      line.appendChild(span);
-      card.appendChild(line);
+      row.appendChild(right);
+      list.appendChild(row);
     });
+    card.appendChild(list);
     host.appendChild(card);
   }
 
@@ -143,6 +145,8 @@
     const host = $("#searchResults");
     host.innerHTML = "";
     const q = query.trim();
+    const hint = $("#searchHint");
+    if (hint) hint.classList.toggle("hidden", !!q);
     if (!q) return;
     const now = new Date();
     const afterCutoff = L.isAfterCutoff(now);
@@ -163,6 +167,7 @@
 
     results.forEach((item) => {
       const r = el("div", "result");
+      r.style.setProperty("--c", catInfo(item.category).color);
       r.appendChild(el("div", "r-name", item.name));
       const rc = el("div", "r-cat");
       rc.appendChild(chip(item.category, true));
@@ -271,14 +276,15 @@
 
   // ---- タブ ----
   function switchTab(name) {
-    document.querySelectorAll("nav.tabs button").forEach((b) => {
+    document.querySelectorAll(".tabbar button").forEach((b) => {
       const on = b.dataset.tab === name;
       b.setAttribute("aria-selected", on ? "true" : "false");
     });
     document.querySelectorAll("section.view").forEach((s) => {
       s.classList.toggle("active", s.dataset.view === name);
     });
-    if (name === "search") $("#searchInput").focus();
+    window.scrollTo(0, 0);
+    if (name === "search") setTimeout(() => $("#searchInput").focus(), 0);
   }
 
   // ---- 起動 ----
@@ -294,7 +300,7 @@
     }
     state.area = getSavedArea();
 
-    document.querySelectorAll("nav.tabs button").forEach((b) =>
+    document.querySelectorAll(".tabbar button").forEach((b) =>
       b.addEventListener("click", () => switchTab(b.dataset.tab)));
     $("#areaSwitch").addEventListener("click", () => showAreaModal(true));
 

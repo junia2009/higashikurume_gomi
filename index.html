@@ -13,37 +13,46 @@
 </head>
 <body>
   <header class="app">
-    <div class="title">東久留米ごみナビ<small>分別検索＋収集日カレンダー</small></div>
-    <button id="areaSwitch" class="area-switch">地区未設定</button>
+    <span class="brand">
+      <svg class="brand-mark" viewBox="0 0 512 512" aria-hidden="true">
+        <rect width="512" height="512" rx="128" fill="currentColor"/>
+        <g fill="none" stroke="#fff" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M168 182h176l-16 214a26 26 0 0 1-26 24H210a26 26 0 0 1-26-24z"/>
+          <path d="M148 182h216"/>
+          <path d="M214 182v-24a22 22 0 0 1 22-22h40a22 22 0 0 1 22 22v24"/>
+          <path d="M226 244v122M286 244v122"/>
+        </g>
+      </svg>
+      <span class="brand-text">東久留米ごみナビ</span>
+    </span>
+    <button id="areaSwitch" class="area-switch" aria-label="地区を切り替える">地区</button>
   </header>
 
-  <div class="wrap">
-    <nav class="tabs" role="tablist">
-      <button data-tab="today" aria-selected="true">今日のごみ</button>
-      <button data-tab="search" aria-selected="false">品目検索</button>
-      <button data-tab="calendar" aria-selected="false">カレンダー</button>
-      <button data-tab="info" aria-selected="false">ルール</button>
-    </nav>
-
-    <section class="view active" data-view="today">
+  <main class="wrap">
+    <section class="view active" data-view="today" role="tabpanel">
       <div id="viewToday"></div>
     </section>
 
-    <section class="view" data-view="search">
+    <section class="view" data-view="search" role="tabpanel">
       <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg>
         <input id="searchInput" type="search" inputmode="search" autocomplete="off"
-               placeholder="品目名で検索（例: ペットボトル、電池、傘）">
+               placeholder="品目名で検索（例: ペットボトル、電池）">
       </div>
       <div id="searchResults"></div>
+      <div id="searchHint" class="search-hint">
+        <p>調べたい品目を入力してください。</p>
+        <p class="sub">ひらがな・カタカナ、読みでも検索できます。</p>
+      </div>
     </section>
 
-    <section class="view" data-view="calendar">
+    <section class="view" data-view="calendar" role="tabpanel">
       <div id="viewCalendar"></div>
     </section>
 
-    <section class="view" data-view="info">
+    <section class="view" data-view="info" role="tabpanel">
       <div class="card">
-        <h2>ごみ出しの基本ルール</h2>
+        <h2 class="card-title">ごみ出しの基本ルール</h2>
         <ul class="rules">
           <li>朝 <b>8:30まで</b> に戸別収集（自宅前）に出す</li>
           <li>有料指定袋制（燃やせる／燃やせない／プラで袋が異なる）</li>
@@ -52,19 +61,38 @@
         </ul>
       </div>
       <div class="card">
-        <h2>祝日・年末年始</h2>
+        <h2 class="card-title">祝日・年末年始</h2>
         <p class="rules">祝日の収集有無は「広報ひがしくるめ」で告知されます。本アプリは裏取りが取れるまで、祝日に「要確認」のバッジを表示します。年末年始（暫定 12/31〜1/3）は収集なしとして扱っています。</p>
-        <p class="rules">確認先: ごみ対策課 <a href="tel:0424732117">042-473-2117</a></p>
+        <p class="rules muted">確認先: ごみ対策課 <a href="tel:0424732117">042-473-2117</a></p>
       </div>
       <div class="card">
-        <h2>データについて</h2>
+        <h2 class="card-title">データについて</h2>
         <p class="rules">品目データ: <span id="itemsVersion">-</span></p>
-        <p class="rules">収集日程: 東久留米市公式サイト（2022年2月更新ページ）を基に作成。分別区分は東京都オープンデータカタログ「【東久留米市】ごみの分別方法一覧」を利用予定。</p>
-        <p class="rules">正確な分別は必ず市公式（<a href="https://www.gomisaku.jp/0069/" target="_blank" rel="noopener">ごみサク</a>）でご確認ください。</p>
+        <p class="rules muted">収集日程は東久留米市公式サイト（2022年2月更新）、分別区分は東京都オープンデータカタログ「【東久留米市】ごみの分別方法一覧」を基にしています。</p>
+        <p class="rules">正確な分別は必ず <a href="https://www.gomisaku.jp/0069/" target="_blank" rel="noopener">ごみサク（公式）</a> でご確認ください。</p>
       </div>
       <p class="src-note">個人開発の非公式アプリです。収集日・分別区分は市公式情報をご確認ください。</p>
     </section>
-  </div>
+  </main>
+
+  <nav class="tabbar" role="tablist" aria-label="メイン">
+    <button data-tab="today" aria-selected="true">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/></svg>
+      <span>今日</span>
+    </button>
+    <button data-tab="search" aria-selected="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg>
+      <span>検索</span>
+    </button>
+    <button data-tab="calendar" aria-selected="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>
+      <span>カレンダー</span>
+    </button>
+    <button data-tab="info" aria-selected="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.5"/></svg>
+      <span>ルール</span>
+    </button>
+  </nav>
 
   <script src="assets/logic.js"></script>
   <script src="assets/app.js"></script>
