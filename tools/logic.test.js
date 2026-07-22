@@ -218,6 +218,37 @@ test("補完データ: 既存と重複する名前はマージで足されない
   assert.strictEqual(merged().length, items.length + added.length);
 });
 
+test("gojuonRow: 読みから五十音の行を判定（濁点・記号）", () => {
+  assert.strictEqual(L.gojuonRow("あいすくりーむ"), "あ");
+  assert.strictEqual(L.gojuonRow("がむ"), "か");       // 濁点 → か行
+  assert.strictEqual(L.gojuonRow("ぺっとぼとる"), "は"); // 半濁点 → は行
+  assert.strictEqual(L.gojuonRow("24じかん"), "#");    // 数字 → #
+  assert.strictEqual(L.gojuonRow("あいしーれこーだー"), "あ");
+});
+
+test("groupByGojuon: 全品目が漏れなくグループ化され順序が正しい", () => {
+  const all = merged();
+  const groups = L.groupByGojuon(all);
+  const total = groups.reduce((n, g) => n + g.items.length, 0);
+  assert.strictEqual(total, all.length, "グループ化で件数が合わない");
+  // 行の並びは GOJUON_ORDER の部分列
+  const order = groups.map((g) => g.row);
+  let idx = -1;
+  for (const r of order) {
+    const p = L.GOJUON_ORDER.indexOf(r);
+    assert.ok(p > idx, "行の順序が不正: " + r);
+    idx = p;
+  }
+});
+
+test("CATEGORY_INFO: scheduled 区分すべてに主なもの・出し方がある", () => {
+  for (const cat of Object.keys(L.CATEGORIES)) {
+    if (L.CATEGORIES[cat].kind !== "scheduled") continue;
+    const ci = L.CATEGORY_INFO[cat];
+    assert.ok(ci && ci.main && ci.howto.length, cat + " の区分情報が不足");
+  }
+});
+
 test("schedule.json: 曜日キーと category が正しい", () => {
   for (const areaKey of Object.keys(schedule.areas)) {
     const weekly = schedule.areas[areaKey].weekly;
