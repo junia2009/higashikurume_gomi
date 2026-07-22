@@ -34,15 +34,29 @@
     </section>
 
     <section class="view" data-view="search" role="tabpanel">
-      <div class="search-box">
-        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg>
-        <input id="searchInput" type="search" inputmode="search" autocomplete="off"
-               placeholder="品目名で検索（例: ペットボトル、電池）">
+      <!-- 一覧（五十音ブラウズ＋検索） -->
+      <div id="searchList" class="subview active">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg>
+          <input id="searchInput" type="search" inputmode="search" autocomplete="off"
+                 placeholder="品目名で検索（例: ペットボトル、電池）">
+        </div>
+        <div class="list-wrap">
+          <div id="itemList" class="item-list"></div>
+          <nav id="kanaRail" class="kana-rail" aria-label="五十音索引"></nav>
+        </div>
       </div>
-      <div id="searchResults"></div>
-      <div id="searchHint" class="search-hint">
-        <p>調べたい品目を入力してください。</p>
-        <p class="sub">ひらがな・カタカナ、読みでも検索できます。</p>
+
+      <!-- 品目詳細 -->
+      <div id="itemDetail" class="subview detail-view">
+        <button class="detail-back" data-back="list">‹ 一覧へ戻る</button>
+        <div id="itemDetailBody"></div>
+      </div>
+
+      <!-- 区分詳細 -->
+      <div id="categoryDetail" class="subview detail-view">
+        <button class="detail-back" data-back="item">‹ 戻る</button>
+        <div id="categoryDetailBody"></div>
       </div>
     </section>
 

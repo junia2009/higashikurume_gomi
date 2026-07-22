@@ -34,6 +34,102 @@
     unknown:         { label: "分類不明",             short: "不明",       color: "#9aa0a6", kind: "guide" }
   };
 
+  // 区分ごとの「主なもの」「出し方」（区分詳細ページで表示）。
+  // 既存のごみ出しルール（8:30・有料指定袋・5袋制限・収集曜日など）から作成。
+  const CATEGORY_INFO = {
+    burnable: {
+      main: "生ごみ、紙くず、革・ゴム製品、汚れの落ちないプラスチック、少量の木の枝など",
+      howto: ["有料指定収集袋（燃やせるごみ用）に入れて出す", "収集日の朝8時30分までに戸別収集（自宅前）へ", "1世帯につき各曜日5袋まで"]
+    },
+    non_burnable: {
+      main: "陶器・ガラス・金属類、小型家電（指定袋に入る大きさ）、刃物など",
+      howto: ["有料指定収集袋（燃やせないごみ用）に入れて出す", "割れ物・刃物は紙に包み「キケン」と表示", "1世帯につき各曜日5袋まで"]
+    },
+    plastic: {
+      main: "プラマークのある容器・包装（レジ袋、食品トレイ、ボトル・チューブ類、緩衝材など）",
+      howto: ["中を軽くすすいで汚れを落とす", "汚れが落ちないものは燃やせるごみへ", "有料指定収集袋（プラ用）に入れて出す"]
+    },
+    pet: {
+      main: "飲料・しょうゆ・酒などのPETボトル（PETマークのあるもの）",
+      howto: ["キャップとラベルを外して容器包装プラスチックへ", "中をすすいで、つぶして出す"]
+    },
+    bin: {
+      main: "飲食用のびん（ジュース・酒・調味料・ジャムなど）",
+      howto: ["キャップを外して中をすすぐ", "燃やせるごみと同じ曜日に出す"]
+    },
+    can: {
+      main: "飲食用の缶（アルミ缶・スチール缶）",
+      howto: ["中を軽くすすいで出す", "紙類・布類と同じ曜日に出す"]
+    },
+    paper_cloth: {
+      main: "新聞・雑誌・段ボール・紙パック・雑がみ、古着・タオルなどの布類",
+      howto: ["種類ごとにひもで縛って出す", "紙類は雨天でも回収／布類は雨の日は出さない", "排出量の制限なし"]
+    },
+    hazardous: {
+      main: "乾電池・ボタン電池、蛍光管、水銀体温計、ライター、スプレー缶など",
+      howto: ["ほかのごみと混ぜず、透明な袋などで出す", "スプレー缶・ライターは使い切ってから", "燃やせないごみと同じ曜日に出す"]
+    },
+    small_appliance: {
+      main: "携帯電話、デジタルカメラ、電卓、充電式電池など（指定の小型家電）",
+      howto: ["市の小型家電回収ボックスへお持ちください", "個人情報はあらかじめ消去する"],
+      link: { text: "回収ボックスの場所（市公式）", href: "https://www.city.higashikurume.lg.jp/kurashi/kankyo/shigen/gomishigen/index.html" }
+    },
+    pruned_branch: {
+      main: "庭木の剪定で出た枝",
+      howto: ["事前申込制（専用電話 042-473-2118）", "市の案内に従って出す"]
+    },
+    oversized: {
+      main: "一辺が30cmを超える家具・家庭（電化）製品など",
+      howto: ["電話またはインターネットで環境課ごみ減量推進係へ申し込む", "有料の粗大ごみ処理券を購入して貼る", "指定日の朝8時30分までに申込時の場所へ"],
+      link: { text: "粗大ごみの申込（市公式）", href: "https://www.city.higashikurume.lg.jp/kurashi/kankyo/shigen/gomishigen/index.html" }
+    },
+    not_collected: {
+      main: "家電リサイクル法対象品（テレビ・冷蔵庫・洗濯機・エアコン）、パソコン、消火器、タイヤ、バイクなど",
+      howto: ["市では収集できません", "販売店・メーカー・専門業者へご相談ください"],
+      link: { text: "出し方を調べる（ごみサク）", href: "https://www.gomisaku.jp/0069/" }
+    },
+    unknown: { main: "", howto: [] }
+  };
+
+  // 五十音の行（あ/か/さ/た/な/は/ま/や/ら/わ/#）を読みから判定
+  const GOJUON_ROWS = [
+    ["あ", "あいうえおぁぃぅぇぉゔ"],
+    ["か", "かきくけこがぎぐげご"],
+    ["さ", "さしすせそざじずぜぞ"],
+    ["た", "たちつてとだぢづでどっ"],
+    ["な", "なにぬねの"],
+    ["は", "はひふへほばびぶべぼぱぴぷぺぽ"],
+    ["ま", "まみむめも"],
+    ["や", "やゆよゃゅょ"],
+    ["ら", "らりるれろ"],
+    ["わ", "わをんゎ"]
+  ];
+  const GOJUON_ORDER = GOJUON_ROWS.map((r) => r[0]).concat(["#"]);
+
+  function gojuonRow(yomi) {
+    const c = (yomi || "").charAt(0);
+    for (const [row, chars] of GOJUON_ROWS) if (chars.indexOf(c) !== -1) return row;
+    return "#"; // 数字・アルファベット・記号など
+  }
+
+  /**
+   * 品目を五十音の行ごとにグループ化して返す。
+   * @returns {{row: string, items: object[]}[]}  GOJUON_ORDER 順、空の行は除く
+   */
+  function groupByGojuon(items) {
+    const map = {};
+    for (const it of items) {
+      const row = gojuonRow(it.yomi || it.name);
+      (map[row] || (map[row] = [])).push(it);
+    }
+    return GOJUON_ORDER
+      .filter((row) => map[row])
+      .map((row) => ({
+        row,
+        items: map[row].sort((a, b) => (a.yomi || a.name).localeCompare(b.yomi || b.name, "ja"))
+      }));
+  }
+
   /** ローカルタイムで YYYY-MM-DD */
   function toISODate(d) {
     const p = (n) => String(n).padStart(2, "0");
@@ -169,6 +265,10 @@
     WEEKDAY_KEYS,
     WEEKDAY_JA,
     CATEGORIES,
+    CATEGORY_INFO,
+    GOJUON_ORDER,
+    gojuonRow,
+    groupByGojuon,
     toISODate,
     fromISODate,
     dateOnly,

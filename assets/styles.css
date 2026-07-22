@@ -258,9 +258,89 @@ section.view.active { display: block; }
   box-shadow: 0 0 0 4px var(--accent-weak);
 }
 
-.search-hint { text-align: center; padding: 42px 20px; color: var(--faint); }
-.search-hint p { margin: 0; font-weight: 700; color: var(--muted); }
-.search-hint .sub { margin-top: 6px; font-weight: 500; font-size: .88rem; color: var(--faint); }
+/* ===== 検索サブビュー ===== */
+.subview { display: none; }
+.subview.active { display: block; animation: fade .2s ease; }
+
+/* 一覧（五十音ブラウズ） */
+.list-wrap { position: relative; }
+.item-list { padding-right: 26px; }
+.gojuon-head {
+  position: sticky; top: 106px; z-index: 5;
+  background: var(--bg); color: var(--faint);
+  font-size: .78rem; font-weight: 800; letter-spacing: .1em;
+  padding: 8px 4px 4px; border-bottom: 1px solid var(--line);
+}
+.item-row {
+  display: flex; align-items: center; gap: 11px;
+  width: 100%; text-align: left; cursor: pointer;
+  background: var(--card); color: var(--text);
+  border: none; border-bottom: 1px solid var(--line);
+  padding: 14px 6px 14px 14px; font-size: 1rem; font-weight: 600;
+}
+.item-row:first-child { border-top-left-radius: var(--r-md); border-top-right-radius: var(--r-md); }
+.item-row:active { background: var(--accent-weak); }
+.item-row .ir-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c, var(--accent)); flex: none; }
+.item-row .ir-name { flex: 1; min-width: 0; }
+.item-row .ir-chev { color: var(--faint); font-size: 1.2rem; font-weight: 700; flex: none; }
+
+/* 五十音索引バー */
+.kana-rail {
+  position: fixed; right: 3px; top: 50%; transform: translateY(-50%);
+  z-index: 12; display: flex; flex-direction: column; gap: 1px;
+  background: color-mix(in srgb, var(--bg-elev) 82%, transparent);
+  backdrop-filter: blur(8px); border-radius: 999px; padding: 5px 2px;
+  box-shadow: var(--shadow-sm);
+}
+.kana-rail.hidden { display: none; }
+.kana-key {
+  border: none; background: transparent; cursor: pointer;
+  color: var(--accent-ink); font-size: .68rem; font-weight: 800;
+  width: 20px; height: 18px; border-radius: 6px; padding: 0;
+}
+.kana-key.off { color: var(--faint); opacity: .4; }
+.kana-key:active { background: var(--accent-weak); }
+
+/* 詳細ページ共通 */
+.detail-view { padding-bottom: 8px; }
+.detail-back {
+  border: none; background: transparent; color: var(--accent-ink);
+  font-size: .95rem; font-weight: 700; cursor: pointer;
+  padding: 4px 2px 12px; margin-bottom: 2px;
+}
+.detail-back:active { opacity: .6; }
+.detail-section {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--r-md); box-shadow: var(--shadow-sm);
+  padding: 14px 16px; margin-bottom: 12px;
+}
+.detail-label {
+  margin: 0 0 8px; font-size: .74rem; font-weight: 800;
+  letter-spacing: .08em; color: var(--accent-ink);
+  border-bottom: 1px solid var(--line); padding-bottom: 8px;
+}
+.dt-name { font-size: 1.35rem; font-weight: 800; }
+.dt-cat {
+  display: flex; align-items: center; width: 100%; gap: 8px;
+  background: transparent; border: none; cursor: pointer; padding: 2px 0;
+}
+.dt-cat .dt-cat-chev { margin-left: auto; color: var(--faint); font-size: 1.3rem; font-weight: 700; }
+.dt-cat:active { opacity: .6; }
+.dt-next { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.dt-next-date { font-size: 1.3rem; font-weight: 800; color: var(--accent-ink); }
+.dt-next-rel { font-size: .8rem; font-weight: 800; color: var(--muted); background: var(--bg); padding: 3px 11px; border-radius: 999px; }
+.dt-next-rel.soon { color: #fff; background: var(--accent); }
+.dt-next-note { color: var(--muted); font-weight: 600; }
+
+/* 区分詳細 */
+.cd-head { margin-bottom: 12px; }
+.cd-main { font-size: .95rem; }
+.cd-days { display: flex; flex-direction: column; gap: 6px; }
+.cd-day-row { display: flex; align-items: center; gap: 10px; }
+.cd-area { font-size: .82rem; font-weight: 700; color: var(--muted); min-width: 68px; }
+.cd-day { font-weight: 800; }
+.cd-howto { margin: 0; padding-left: 1.2em; font-size: .92rem; }
+.cd-howto li { margin-bottom: 6px; }
 
 .result {
   --c: var(--accent);

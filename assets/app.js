@@ -170,71 +170,177 @@
     host.appendChild(card);
   }
 
-  // ---- 検索 ----
-  function renderResults(query) {
-    const host = $("#searchResults");
-    host.innerHTML = "";
-    const q = query.trim();
-    const hint = $("#searchHint");
-    if (hint) hint.classList.toggle("hidden", !!q);
-    if (!q) return;
-    const now = new Date();
-    const afterCutoff = L.isAfterCutoff(now);
-    const results = L.searchItems(state.items, q, 50);
+  // ==== 検索（ごみサク風の一覧ブラウズ＋詳細ページ）====
 
-    if (results.length === 0) {
+  // サブビュー切替（list / item / category）
+  function showSubview(name) {
+    document.querySelectorAll('section.view[data-view="search"] .subview')
+      .forEach((s) => s.classList.remove("active"));
+    const id = name === "item" ? "itemDetail" : name === "category" ? "categoryDetail" : "searchList";
+    $("#" + id).classList.add("active");
+    window.scrollTo(0, 0);
+  }
+
+  // 一覧を描画（クエリで絞り込み）。空クエリなら全品目を五十音表示。
+  function renderList(query) {
+    const host = $("#itemList");
+    host.innerHTML = "";
+    const q = (query || "").trim();
+    const items = q ? L.searchItems(state.items, q, 500) : state.items;
+
+    if (q && items.length === 0) {
       const help = el("div", "empty-help");
       help.appendChild(el("p", null, "「" + q + "」は見つかりませんでした。"));
-      const a1 = el("a", "link-btn", "ごみサク（公式）で探す");
-      a1.href = "https://www.gomisaku.jp/0069/"; a1.target = "_blank"; a1.rel = "noopener";
-      const a2 = el("a", "link-btn", "粗大ごみ受付（市公式）");
-      a2.href = "https://www.city.higashikurume.lg.jp/kurashi/kankyo/shigen/gomishigen/index.html";
-      a2.target = "_blank"; a2.rel = "noopener";
-      help.appendChild(a1); help.appendChild(a2);
+      appendBtn(help, "ごみサク（公式）で探す", "https://www.gomisaku.jp/0069/");
+      appendBtn(help, "粗大ごみ受付（市公式）",
+        "https://www.city.higashikurume.lg.jp/kurashi/kankyo/shigen/gomishigen/index.html");
       host.appendChild(help);
+      renderKanaRail([]);
       return;
     }
 
-    results.forEach((item) => {
-      const r = el("div", "result");
-      r.style.setProperty("--c", catInfo(item.category).color);
-      r.appendChild(el("div", "r-name", item.name));
-      const rc = el("div", "r-cat");
-      rc.appendChild(chip(item.category, true));
-      r.appendChild(rc);
-      if (item.note) r.appendChild(noteEl(item.note));
+    if (q) {
+      // 検索中はスコア順のフラットな一覧
+      items.forEach((it) => host.appendChild(itemRow(it)));
+      renderKanaRail([]);
+    } else {
+      // ブラウズ中は五十音グループ＋索引バー
+      const groups = L.groupByGojuon(state.items);
+      groups.forEach((g) => {
+        const h = el("div", "gojuon-head", g.row);
+        h.id = "gojuon-" + g.row;
+        host.appendChild(h);
+        g.items.forEach((it) => host.appendChild(itemRow(it)));
+      });
+      renderKanaRail(groups.map((g) => g.row));
+    }
+  }
 
-      const info = catInfo(item.category);
-      const next = el("div", "r-next");
-      if (info.kind === "guide") {
-        // 固定収集日を持たない区分は案内へ誘導
-        if (item.category === "oversized") {
-          next.textContent = "粗大ごみは事前申込制です。";
-          appendLink(next, "受付・料金を確認",
-            "https://www.city.higashikurume.lg.jp/kurashi/kankyo/shigen/gomishigen/index.html");
-        } else if (item.category === "pruned_branch") {
-          next.textContent = "剪定枝は事前申込制です（専用電話 042-473-2118）。";
-        } else if (item.category === "small_appliance") {
-          next.textContent = "市の小型家電回収ボックスへお持ちください。";
-          appendLink(next, "回収ボックスの場所",
-            "https://www.city.higashikurume.lg.jp/kurashi/kankyo/shigen/gomishigen/index.html");
-        } else {
-          next.textContent = "市の収集では出せません。";
-          appendLink(next, "出し方を確認", "https://www.gomisaku.jp/0069/");
-        }
+  function itemRow(item) {
+    const row = el("button", "item-row");
+    row.style.setProperty("--c", catInfo(item.category).color);
+    row.appendChild(el("span", "ir-dot"));
+    row.appendChild(el("span", "ir-name", item.name));
+    row.appendChild(el("span", "ir-chev", "›"));
+    row.addEventListener("click", () => openItem(item));
+    return row;
+  }
+
+  function renderKanaRail(rows) {
+    const rail = $("#kanaRail");
+    rail.innerHTML = "";
+    if (!rows.length) { rail.classList.add("hidden"); return; }
+    rail.classList.remove("hidden");
+    const present = new Set(rows);
+    L.GOJUON_ORDER.forEach((r) => {
+      const b = el("button", "kana-key" + (present.has(r) ? "" : " off"), r);
+      if (present.has(r)) {
+        b.addEventListener("click", () => {
+          const t = document.getElementById("gojuon-" + r);
+          if (t) t.scrollIntoView({ block: "start", behavior: "smooth" });
+        });
       } else {
-        const nc = L.nextCollectionDate(item.category, state.area, now, state.schedule, state.special,
-          { includeFromDate: !afterCutoff });
-        if (nc) {
-          next.innerHTML = "次回収集日: <b>" + L.formatDateJa(nc.date) + "</b>（"
-            + L.relativeLabel(nc.daysFromNow) + "・" + info.label + "）" + (nc.holiday ? " ⚠祝日要確認" : "");
-        } else {
-          next.textContent = "次回収集日は算出できませんでした。";
-        }
+        b.disabled = true;
       }
-      r.appendChild(next);
-      host.appendChild(r);
+      rail.appendChild(b);
     });
+  }
+
+  // 品目詳細ページ
+  function openItem(item) {
+    const body = $("#itemDetailBody");
+    body.innerHTML = "";
+    const info = catInfo(item.category);
+    const now = new Date();
+
+    body.appendChild(detailSection("品名", el("div", "dt-name", item.name)));
+
+    // 分別（区分・タップで区分詳細へ）
+    const catRow = el("button", "dt-cat");
+    catRow.style.setProperty("--c", info.color);
+    catRow.appendChild(chip(item.category, false));
+    catRow.appendChild(el("span", "dt-cat-chev", "›"));
+    catRow.addEventListener("click", () => openCategory(item.category));
+    body.appendChild(detailSection("分別", catRow));
+
+    // 次回収集日（このアプリの差別化ポイント）
+    const nextBox = el("div", "dt-next");
+    if (info.kind === "scheduled") {
+      const nc = L.nextCollectionDate(item.category, state.area, now, state.schedule, state.special,
+        { includeFromDate: !L.isAfterCutoff(now) });
+      if (nc) {
+        nextBox.appendChild(el("span", "dt-next-date", L.formatDateJa(nc.date)));
+        nextBox.appendChild(el("span", "dt-next-rel" + (nc.daysFromNow <= 1 ? " soon" : ""),
+          L.relativeLabel(nc.daysFromNow)));
+        if (nc.holiday) nextBox.appendChild(el("span", "next-holiday", "祝日要確認"));
+      } else { nextBox.textContent = "—"; }
+    } else if (item.category === "oversized" || item.category === "pruned_branch") {
+      nextBox.appendChild(el("span", "dt-next-note", "申込制（収集日は申込時に決定）"));
+    } else {
+      nextBox.appendChild(el("span", "dt-next-note", "定期収集はありません"));
+    }
+    body.appendChild(detailSection(state.schedule.areas[state.area].label + "の次回収集日", nextBox));
+
+    // コメント（出し方）
+    if (item.note) {
+      body.appendChild(detailSection("コメント", noteEl(item.note)));
+    }
+
+    showSubview("item");
+  }
+
+  // 区分詳細ページ
+  function openCategory(cat) {
+    const body = $("#categoryDetailBody");
+    body.innerHTML = "";
+    const info = catInfo(cat);
+    const ci = L.CATEGORY_INFO[cat] || { main: "", howto: [] };
+
+    const head = el("div", "cd-head");
+    head.style.setProperty("--c", info.color);
+    head.appendChild(chip(cat, false));
+    body.appendChild(head);
+
+    if (ci.main) body.appendChild(detailSection("主なもの", el("div", "cd-main", ci.main)));
+
+    // 収集曜日（scheduled のみ）
+    if (info.kind === "scheduled") {
+      const days = el("div", "cd-days");
+      ["east", "west"].forEach((areaKey) => {
+        const area = state.schedule.areas[areaKey];
+        const wd = L.WEEKDAY_KEYS
+          .map((k, i) => (area.weekly[k].indexOf(cat) !== -1 ? L.WEEKDAY_JA[i] : null))
+          .filter(Boolean).join("・");
+        const row = el("div", "cd-day-row");
+        row.appendChild(el("span", "cd-area", area.label));
+        row.appendChild(el("span", "cd-day", wd ? wd + "曜日" : "—"));
+        days.appendChild(row);
+      });
+      body.appendChild(detailSection("収集曜日", days));
+    }
+
+    if (ci.howto && ci.howto.length) {
+      const ul = el("ul", "cd-howto");
+      ci.howto.forEach((t) => ul.appendChild(el("li", null, t)));
+      const sec = detailSection("出し方", ul);
+      if (ci.link) appendBtn(sec, ci.link.text, ci.link.href);
+      body.appendChild(sec);
+    }
+
+    showSubview("category");
+  }
+
+  function detailSection(title, contentEl) {
+    const sec = el("div", "detail-section");
+    sec.appendChild(el("h3", "detail-label", title));
+    sec.appendChild(contentEl);
+    return sec;
+  }
+
+  function appendBtn(parent, text, href) {
+    const a = el("a", "link-btn", text);
+    a.href = href; a.target = "_blank"; a.rel = "noopener";
+    parent.appendChild(a);
   }
 
   // ---- カレンダー ----
@@ -308,6 +414,7 @@
 
   function renderAll() {
     renderToday();
+    renderList($("#searchInput") ? $("#searchInput").value : "");
     renderCalendar();
     renderInfo();
   }
@@ -346,8 +453,11 @@
     $("#searchInput").addEventListener("input", (e) => {
       clearTimeout(timer);
       const v = e.target.value;
-      timer = setTimeout(() => renderResults(v), 120);
+      timer = setTimeout(() => { renderList(v); showSubview("list"); }, 120);
     });
+    // 詳細ページの戻る
+    document.querySelectorAll(".detail-back").forEach((b) =>
+      b.addEventListener("click", () => showSubview(b.dataset.back === "item" ? "item" : "list")));
 
     if (!state.area) {
       showAreaModal(false);
