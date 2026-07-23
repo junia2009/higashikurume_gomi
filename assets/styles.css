@@ -1,24 +1,25 @@
+/* テーマ: 明るい海（ハワイ・沖縄のターコイズブルー） */
 :root {
-  --bg: #f4f6f4;
+  --bg: #ecfbfb;
   --bg-elev: #ffffff;
   --card: #ffffff;
-  --text: #1b201e;
-  --muted: #6a7570;
-  --faint: #9aa39e;
-  --line: #e6eae6;
-  --line-strong: #d6dcd6;
-  --accent: #2e7d5b;
-  --accent-deep: #1f6247;
-  --accent-weak: #e8f3ec;
-  --accent-ink: #256b4c;
-  --warn-bg: #fff6da;
-  --warn-line: #f0d073;
-  --warn-text: #7a5a00;
-  --done-bg: #eef1ef;
-  --done-text: #7a847e;
-  --shadow-sm: 0 1px 2px rgba(20, 40, 30, .06);
-  --shadow-md: 0 2px 8px rgba(20, 40, 30, .06), 0 12px 28px rgba(20, 40, 30, .05);
-  --shadow-hero: 0 6px 16px rgba(46, 125, 91, .18), 0 18px 40px rgba(46, 125, 91, .12);
+  --text: #0d3640;
+  --muted: #5a828b;
+  --faint: #93b6bd;
+  --line: #d5eff1;
+  --line-strong: #bfe6ea;
+  --accent: #10bcd0;
+  --accent-deep: #0a90ac;
+  --accent-weak: #d3f4f7;
+  --accent-ink: #08869b;
+  --warn-bg: #fff2cf;
+  --warn-line: #f7cf5b;
+  --warn-text: #8a5b00;
+  --done-bg: #e7f1f2;
+  --done-text: #6f8a90;
+  --shadow-sm: 0 1px 2px rgba(10, 90, 105, .08);
+  --shadow-md: 0 2px 8px rgba(10, 90, 105, .08), 0 12px 28px rgba(10, 90, 105, .07);
+  --shadow-hero: 0 6px 16px rgba(16, 188, 208, .28), 0 18px 40px rgba(16, 188, 208, .18);
   --r-sm: 12px;
   --r-md: 18px;
   --r-lg: 24px;
@@ -26,26 +27,26 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #10140f;
-    --bg-elev: #191f1b;
-    --card: #191f1b;
-    --text: #e8ede9;
-    --muted: #9aa69f;
-    --faint: #6d786f;
-    --line: #262e28;
-    --line-strong: #313a34;
-    --accent: #4cc088;
-    --accent-deep: #6ad3a0;
-    --accent-weak: #1c2c24;
-    --accent-ink: #7ad7a8;
-    --warn-bg: #322a10;
-    --warn-line: #6d5a1e;
-    --warn-text: #efd98c;
-    --done-bg: #232a25;
-    --done-text: #98a29b;
+    --bg: #072530;
+    --bg-elev: #0e333f;
+    --card: #0e333f;
+    --text: #e2f6f8;
+    --muted: #8bb4bc;
+    --faint: #5a838d;
+    --line: #1c414d;
+    --line-strong: #285462;
+    --accent: #2ad4e6;
+    --accent-deep: #57e2f0;
+    --accent-weak: #10333d;
+    --accent-ink: #45d8ea;
+    --warn-bg: #33290f;
+    --warn-line: #6e591d;
+    --warn-text: #f2da8c;
+    --done-bg: #12333c;
+    --done-text: #8ba9af;
     --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
-    --shadow-md: 0 2px 8px rgba(0,0,0,.4), 0 12px 28px rgba(0,0,0,.35);
-    --shadow-hero: 0 8px 24px rgba(0,0,0,.5);
+    --shadow-md: 0 2px 8px rgba(0,0,0,.45), 0 12px 28px rgba(0,0,0,.4);
+    --shadow-hero: 0 8px 26px rgba(0,0,0,.5);
   }
 }
 
@@ -147,9 +148,10 @@ section.view.active { display: block; }
 .hero-today {
   color: #fff;
   border: none;
+  /* 明るい海: 浅瀬のエメラルド → ターコイズ → 深い青のグラデーション */
   background:
-    radial-gradient(120% 140% at 100% 0%, rgba(255,255,255,.16), transparent 55%),
-    linear-gradient(150deg, var(--accent) 0%, var(--accent-deep) 100%);
+    radial-gradient(120% 150% at 0% 0%, rgba(255,255,255,.30), transparent 45%),
+    linear-gradient(145deg, #3ad9c4 0%, #12bcd4 45%, #0a90c4 100%);
   box-shadow: var(--shadow-hero);
 }
 .hero-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }
